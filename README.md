@@ -57,7 +57,7 @@ JapasTycoonIos/
 ├── scenes/                  # Godot scene files
 ├── autoload/                # GDScript autoloads (AdsManager, IAPManager, etc.)
 ├── addons/godot-iap/        # OpenIAP (StoreKit 2) plugin
-├── ios/plugins/             # poing-godot-admob iOS plugin (AdMob)
+├── ios/plugins/             # Unity Ads iOS plugin (native bridge + SDK)
 ├── fastlane/                # Fastlane config
 ├── .github/workflows/       # GitHub Actions CI/CD
 └── project.godot            # Godot project file
@@ -68,15 +68,17 @@ JapasTycoonIos/
 | Feature | Android | iOS |
 |---------|---------|-----|
 | IAP | Google Play Billing | OpenIAP (StoreKit 2) |
-| Ads | Unity Ads | AdMob iOS (poing-godot-admob) |
+| Ads | Unity Ads | Unity Ads (native iOS bridge) |
 | IAP product IDs | `instant_coins_1/2/3` | `com.japastycoon.instant_coins_1/2/3` |
 | Build | Gradle | GitHub Actions + Fastlane |
 
-## Ad Unit ID (Test)
+## Unity Ads Configuration
 
-- **iOS Rewarded**: `ca-app-pub-3940256099942544/1712485313`
+- **iOS Game ID**: set under **Project Settings → unity_ads → ios → game_id** (currently a placeholder `0000000` test ID).
+- **Rewarded placement**: `unity_ads → ios → placements → rewarded` (default `Rewarded_iOS`).
+- `test_mode` is `true` by default — set it to `false` for production.
 
-Replace with your own ad unit ID before production release.
+Replace the placeholder Game ID with your real Unity Ads Game ID before production release.
 
 ## Troubleshooting
 

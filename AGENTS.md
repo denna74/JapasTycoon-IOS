@@ -4,7 +4,7 @@
 
 - **Never use `get_name` as a custom method name** — it conflicts with `GDScript.get_name()` (built-in, 0 args). Use `get_japas_name` or similar instead.
 - **TextureButton with `ignore_texture_size = false` (default) ignores parent sizing** — when a `TextureButton` is a child of a manually-sized `Control`, setting `offset_right`/`offset_bottom` on the parent does NOT visually resize the texture. The TextureButton overflows to at least the texture's native size. ALWAYS set `ignore_texture_size = true` on any TextureButton that should shrink below its texture size.
-- **GDScript parses type names at parse-time**, even inside unreachable blocks. All native iOS plugin types must use `ClassDB.instantiate()` / `ClassDB.class_exists()` — never reference them directly (e.g. never `var x: MobileAds` / `RewardedAd.new()`). See `AdsManager.gd` / `IAPManager.gd`.
+- **GDScript parses type names at parse-time**, even inside unreachable blocks. All native iOS plugin types must use `ClassDB.instantiate()` / `ClassDB.class_exists()` — never reference them directly (e.g. never `var x: MobileAds` / `RewardedAd.new()`). See `IAPManager.gd` (drives `GodotIap` via `ClassDB`). The `AdsManager` does NOT use ClassDB — it drives the GDScript `UnityAds` autoload.
 - **`IAPConfig.get_coin_reward()` keys** are the internal keys (`instant_coins_1/2/3`), NOT the product IDs. `MenuLevelSelect.gd` calls `get_coin_reward(sku)` with a product ID, so `get_coin_reward` maps product ID → reward internally (unlike the original Android version which keyed by SKU).
 
 ## Git Policy
@@ -19,15 +19,14 @@
 
 - This project targets iOS using Godot 4.6 with the Mobile renderer.
 - IAP uses OpenIAP (StoreKit 2) — the `IAPManager` autoload drives the native `GodotIap` class via `ClassDB`.
-- Ads use the poing-godot-admob iOS plugin — the `MobileAds` singleton via `ClassDB`.
-- The `UnityAds` autoload was removed (was Android-only).
+- Ads use Unity Ads — the `AdsManager` autoload drives the GDScript `UnityAds` autoload, which wraps the native `GodotUnityAds` iOS plugin singleton (`Engine.get_singleton("GodotUnityAds")`). The iOS plugin lives in `ios/plugins/unity-ads/` (an Objective-C++ bridge built by `build.sh`, run on CI only since it needs macOS/Xcode). The Android original used the `addons/unityads/` plugin (Android-only, not present here).
 - Product IDs use reverse-domain notation: `com.japastycoon.instant_coins_1/2/3`.
 
-## AdMob Plugin Notes
+## Unity Ads Notes (iOS)
 
-**ALWAYS pass `null` (or nothing) to `RewardedAdLoader.load()`** — the test ad unit ID
-for iOS is `ca-app-pub-3940256099942544/1712485313`. Replace with your own ad unit ID
-before production release.
+- The native `GodotUnityAds` singleton and `UnityAds.xcframework` are **only present after `ios/plugins/unity-ads/build.sh` runs** (CI builds them before export). Locally, `godot --headless --import` logs "Invalid plugin config file unity-ads/unity-ads.gdip" — this is expected because the bridge/framework are not built on Linux.
+- The `AdsManager` flow logic is pure GDScript driving the `UnityAds` autoload signals — it works the same on desktop/tests (where the native plugin is absent and calls are no-ops).
+- Game ID / placement are configured under Project Settings → `unity_ads/` (`ios/game_id`, `ios/placements/rewarded`). Default rewarded placement is `Rewarded_iOS`.
 
 ## Build & Deploy
 

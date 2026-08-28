@@ -29,6 +29,7 @@ SaveManager="*res://autoload/SaveManager.gd"
 MusicManager="*res://autoload/MusicManager.gd"
 ClickPlayer="*res://autoload/ClickPlayer.gd"
 SceneManager="*res://autoload/SceneManager.gd"
+UnityAds="*res://autoload/UnityAds.gd"
 AdsManager="*res://autoload/AdsManager.gd"
 IAPConfig="*res://autoload/IAPConfig.gd"
 IAPManager="*res://autoload/IAPManager.gd"
@@ -58,3 +59,10 @@ ui_accept={
 
 renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true
+
+[unity_ads]
+
+auto_initialize=true
+test_mode=true
+ios/game_id="0000000"
+ios/placements/rewarded="Rewarded_iOS"

@@ -63,6 +63,14 @@ jobs:
           security set-key-partition-list -S apple-tool:,apple: -k "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
           security list-keychain -d user -s $KEYCHAIN_PATH
 
+      - name: Build Unity Ads iOS Plugin
+        run: |
+          brew install scons
+          ./ios/plugins/unity-ads/build.sh
+        env:
+          UNITY_ADS_SDK_URL: ${{ secrets.UNITY_ADS_SDK_URL }}
+          UNITY_ADS_VERSION: ${{ secrets.UNITY_ADS_VERSION }}
+
       - name: Export Xcode Project
         run: |
           mkdir -p build/ios
