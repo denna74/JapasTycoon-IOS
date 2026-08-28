@@ -6,6 +6,9 @@
 // signals fire on the main thread.
 
 #import "GodotUnityAds.h"
+#import <UIKit/UIKit.h>
+#import <UnityAds/UnityAds.h>
+#import <UnityAds/UnityAds-Swift.h>
 #include "core/config/engine.h"
 
 GodotUnityAdsBridge *GodotUnityAdsBridge::instance = NULL;
@@ -16,7 +19,7 @@ GodotUnityAdsBridge *GodotUnityAdsBridge::instance = NULL;
 // ---------------------------------------------------------------------------
 @implementation GodotUnityAds
 
-- (void)unityAdsInitializationComplete {
+- (void)initializationComplete {
     dispatch_async(dispatch_get_main_queue(), ^{
         GodotUnityAdsBridge::get_singleton()->emit_initialized();
     });
@@ -93,12 +96,12 @@ GodotUnityAdsBridge *GodotUnityAdsBridge::get_singleton() {
 }
 
 bool GodotUnityAdsBridge::is_available() {
-    return [UnityAds isInitialized];
+    return [UnityServices isInitialized];
 }
 
 void GodotUnityAdsBridge::initialize(String game_id, bool test_mode) {
     NSString *gameId = [NSString stringWithUTF8String:game_id.utf8().get_data()];
-    [UnityAds initialize:gameId delegate:unityAds testMode:test_mode];
+    [UnityAds initialize:gameId testMode:test_mode initializationDelegate:unityAds];
 }
 
 void GodotUnityAdsBridge::load_ad(String placement_id) {
@@ -108,7 +111,17 @@ void GodotUnityAdsBridge::load_ad(String placement_id) {
 
 void GodotUnityAdsBridge::show_ad(String placement_id) {
     NSString *placement = [NSString stringWithUTF8String:placement_id.utf8().get_data()];
-    UIViewController *rootController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    UIViewController *rootController = nil;
+    for (UIScene *scene in UIApplication.sharedApplication.connectedScenes) {
+        if (scene.activationState == UISceneActivationStateForegroundActive && [scene isKindOfClass:[UIWindowScene class]]) {
+            UIWindowScene *windowScene = (UIWindowScene *)scene;
+            rootController = windowScene.keyWindow.rootViewController;
+            break;
+        }
+    }
+    if (rootController == nil && UIApplication.sharedApplication.keyWindow != nil) {
+        rootController = UIApplication.sharedApplication.keyWindow.rootViewController;
+    }
     [UnityAds show:rootController placementId:placement showDelegate:unityAds];
 }
 

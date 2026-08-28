@@ -3,8 +3,8 @@
 # Builds the GodotUnityAds iOS plugin used by JapasTycoon.
 #
 # Produces:
-#   bin/unity-ads-bridge.release.xcframework   (the Godot bridge static library)
-#   vendor/UnityAds.xcframework                (Unity Ads iOS SDK, fetched + cached)
+#   bin/unity-ads-bridge.xcframework          (the Godot bridge static library)
+#   vendor/UnityAds.xcframework               (Unity Ads iOS SDK, fetched + cached)
 #
 # This script must run on macOS with Xcode and Python/SCons (the macos-latest
 # GitHub Action runner satisfies all of these). It follows the canonical
@@ -21,24 +21,26 @@ export PATH="$PATH:/opt/homebrew/bin"
 # ---------------------------------------------------------------------------
 # 1. Fetch the Unity Ads iOS SDK framework (UnityAds.xcframework)
 # ---------------------------------------------------------------------------
-# Unity publishes a versioned xcframework. The exact tarball URL can drift; if
-# this download fails, drop the pre-downloaded `vendor/UnityAds.xcframework`
-# into ios/plugins/unity-ads/vendor/ and this step is skipped.
-UNITY_ADS_VERSION="${UNITY_ADS_VERSION:-4.18.0}"
+# Unity ships the SDK as `UnityAds.zip` (containing UnityAds.xcframework) in the
+# Assets section of each release on Unity-Technologies/unity-ads-ios. If the
+# default URL drifts, set UNITY_ADS_SDK_URL to a direct asset URL, or drop a
+# pre-downloaded framework into ios/plugins/unity-ads/vendor/ to bypass this.
+UNITY_ADS_VERSION="${UNITY_ADS_VERSION:-4.18.1}"
 VENDOR_DIR="$SCRIPT_DIR/vendor"
 mkdir -p "$VENDOR_DIR"
 
 if [ ! -d "$VENDOR_DIR/UnityAds.xcframework" ]; then
     echo "==> Fetching Unity Ads iOS SDK $UNITY_ADS_VERSION"
-    # Unity hosts per-version zip bundles. Locate the current URL if this one
-    # 404s; place the framework into vendor/UnityAds.xcframework to bypass.
-    URL="${UNITY_ADS_SDK_URL:-https://github.com/Unity-Technologies/unity-ads-ios/archive/refs/heads/master.zip}"
+    URL="${UNITY_ADS_SDK_URL:-https://github.com/Unity-Technologies/unity-ads-ios/releases/download/${UNITY_ADS_VERSION}/UnityAds.zip}"
     TMP="$(mktemp -d)"
     curl -L --fail -o "$TMP/unityads.zip" "$URL"
     unzip -q "$TMP/unityads.zip" -d "$TMP"
-    cp -R "$TMP"/*/UnityAds.*.xcframework "$VENDOR_DIR/UnityAds.xcframework" 2>/dev/null \
-        || cp -R "$TMP"/UnityAds.*.xcframework "$VENDOR_DIR/UnityAds.xcframework" 2>/dev/null \
-        || { echo "ERROR: could not locate UnityAds.xcframework in $URL"; exit 1; }
+    if [ -d "$TMP/UnityAds.xcframework" ]; then
+        cp -R "$TMP/UnityAds.xcframework" "$VENDOR_DIR/UnityAds.xcframework"
+    else
+        echo "ERROR: UnityAds.xcframework not found in $URL"
+        exit 1
+    fi
     rm -rf "$TMP"
 else
     echo "==> Reusing cached UnityAds.xcframework"
@@ -47,51 +49,64 @@ fi
 # ---------------------------------------------------------------------------
 # 2. Build the Godot bridge library
 # ---------------------------------------------------------------------------
-# The bridge is compiled against the Godot 4.6 engine headers using the
-# godot-ios-plugins SConstruct, which we vendor here.
+# The bridge compiles against the Godot 4.6 engine headers. We use the official
+# godot-ios-plugins harness (its SConstruct globs plugins/<name>/*.{cpp,mm,m}
+# and builds against the `godot` submodule). The `godot` submodule must build
+# its generated headers first, so this step compiles the engine's iOS target.
+PLUGIN_NAME="godot_unity_ads"
 WORK="$(mktemp -d)"
 trap 'rm -rf "$WORK"' EXIT
 
-echo "==> Cloning godot-ios-plugins (build harness)"
+echo "==> Cloning godot-ios-plugins (build harness) — this pulls Godot source"
 git clone --recursive --depth 1 https://github.com/godotengine/godot-ios-plugins.git "$WORK/godot-ios-plugins"
 cd "$WORK/godot-ios-plugins"
 
-# Point the Godot submodule at the 4.6 tag and generate headers.
+# Pin the Godot submodule to the 4.6 tag.
 cd godot
 git fetch --depth 1 origin tag "$GODOT_TAG"
 git checkout "$GODOT_TAG"
 cd ..
 
-# Install the plugin's source files into the plugin harness.
-PLUGIN_DIR="$WORK/godot-ios-plugins/plugins/godot_unity_ads"
+# Generate the Godot iOS headers (required to compile any iOS plugin).
+echo "==> Building Godot 4.6 iOS headers (takes several minutes)"
+cd godot
+scons platform=ios target=editor -j2
+cd ..
+
+# Install the plugin source into the harness and register it in the SConstruct
+# plugin list (the EnumVariable would otherwise reject an unknown plugin name).
+PLUGIN_DIR="plugins/$PLUGIN_NAME"
 mkdir -p "$PLUGIN_DIR"
 cp "$SCRIPT_DIR/src/GodotUnityAds.h" "$SCRIPT_DIR/src/GodotUnityAds.mm" "$PLUGIN_DIR/"
-cat > "$PLUGIN_DIR/GodotUnityAdsPlugin.gdip" <<'EOF'
-[config]
-name="UnityAds"
-binaries=["bin/unity-ads-bridge.release.xcframework"]
-initialization="register_godot_unity_ads_types"
-deinitialization="unregister_godot_unity_ads_types"
-restart_if_changed=true
-EOF
+python3 - "$PLUGIN_NAME" "$SCRIPT_DIR" <<'PYEOF'
+import sys
+name, script_dir = sys.argv[1], sys.argv[2]
+with open("SConstruct") as f:
+    text = f.read()
+marker = "['', 'apn', 'arkit', 'camera', 'icloud', 'gamecenter', 'inappstore', 'photo_picker']"
+assert marker in text, "SConstruct plugin list marker not found"
+text = text.replace(marker, "['', 'apn', 'arkit', 'camera', 'icloud', 'gamecenter', 'inappstore', 'photo_picker', '%s']" % name)
+# Add the Unity Ads framework headers to the include path so the bridge can
+# `#import <UnityAds/UnityAds.h>`.
+cpppath_marker = "'godot/platform/ios',"
+uads_inc = "    '" + script_dir + "/vendor/UnityAds.xcframework/ios-arm64/UnityAds.framework/Headers',"
+assert cpppath_marker in text, "CPPPATH marker not found"
+text = text.replace(cpppath_marker, cpppath_marker + "\n" + uads_inc)
+with open("SConstruct", "w") as f:
+    f.write(text)
+PYEOF
 
-echo "==> Compiling bridge (arm64 device + simulators)"
-# The plugin name passed to scons must match the source-file basename used by
-# the SConstruct. We build release only (test-flight release export).
-PLUGIN_NAME="godot_unity_ads"
-scons target=release_debug arch=arm64 plugin=$PLUGIN_NAME version=4.6
-scons target=release_debug arch=arm64 simulator=yes plugin=$PLUGIN_NAME version=4.6
+echo "==> Compiling bridge (arm64 device + arm64 simulator)"
+# version=4.0 is the generic Godot 4.x flag set used by the harness for all 4.x.
+scons target=release_debug arch=arm64 plugin=$PLUGIN_NAME version=4.0
+scons target=release_debug arch=arm64 simulator=yes plugin=$PLUGIN_NAME version=4.0
 
-lipo -create \
-    "./bin/lib$PLUGIN_NAME.arm64-ios.release_debug.a" \
-    -output "./bin/$PLUGIN_NAME-device.release_debug.a"
-lipo -create \
-    "./bin/lib$PLUGIN_NAME.arm64-simulator.release_debug.a" \
-    -output "./bin/$PLUGIN_NAME-simulator.release_debug.a"
+DEVICE_LIB="./bin/lib$PLUGIN_NAME.arm64-ios.release_debug.a"
+SIM_LIB="./bin/lib$PLUGIN_NAME.arm64-simulator.release_debug.a"
 
 xcodebuild -create-xcframework \
-    -library "./bin/$PLUGIN_NAME-device.release_debug.a" \
-    -library "./bin/$PLUGIN_NAME-simulator.release_debug.a" \
+    -library "$DEVICE_LIB" \
+    -library "$SIM_LIB" \
     -output "$ROOT_DIR/ios/plugins/unity-ads/bin/unity-ads-bridge.xcframework"
 
 echo "==> Build complete: ios/plugins/unity-ads/bin/unity-ads-bridge.xcframework"

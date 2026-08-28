@@ -18,6 +18,8 @@
 #define GODOT_UNITY_ADS_H
 
 #import <Foundation/Foundation.h>
+#import <UnityAds/UnityAds.h>
+#import <UnityAds/UnityAds-Swift.h>
 #include "core/object/class_db.h"
 
 @interface GodotUnityAds : NSObject <UnityAdsInitializationDelegate, UnityAdsLoadDelegate, UnityAdsShowDelegate>

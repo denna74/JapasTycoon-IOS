@@ -14,6 +14,7 @@
 ## Golden Rule
 
 - **Only implement exactly what the user asks. Never add extra logic, features, or behaviors they didn't request. If you have an idea, ask me first. No overthinking, no "helpful" additions without my confirmation.**
+- **HARD DECISION — I DO NOT USE ADMOB, I USE UNITY ADS.** The iOS ads integration is Unity Ads exclusively. Never propose, evaluate, or switch to AdMob again. This is final and not open for reconsideration — do not re-litigate it even if a "simpler" AdMob plugin appears.
 
 ## iOS-Specific Notes
 

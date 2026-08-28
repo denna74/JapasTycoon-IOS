@@ -6,7 +6,7 @@ initialization="register_godot_unity_ads_types"
 deinitialization="unregister_godot_unity_ads_types"
 
 [dependencies]
-linked=["AdSupport.framework", "WebKit.framework", "StoreKit.framework"]
+linked=["AdSupport.framework", "WebKit.framework", "StoreKit.framework", "CoreTelephony.framework", "SystemConfiguration.framework", "AVFoundation.framework"]
 embedded=["vendor/UnityAds.xcframework"]
 system=["AppTrackingTransparency.framework"]
 capabilities=[]
