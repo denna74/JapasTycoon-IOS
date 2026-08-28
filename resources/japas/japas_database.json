@@ -1,0 +1,842 @@
+[
+  {
+	"name": "Kue Lumpur Kentang",
+	"price": 3000,
+	"origin": "Sidoarjo, Jawa Timur",
+	"desc_id": "Kue basah tradisional bertekstur sangat lembut mirip kastard, terbuat dari adonan kentang kukus, santan kelapa kental, tepung terigu, mentega, dan telur ayam. Memiliki aroma pandan suji alami dan manis legit yang khas dengan hiasan kismis di atasnya. Sangat populer sebagai hidangan pembuka di berbagai acara pesta.",
+	"desc_en": "Soft traditional wet cake with a custard-like texture, made from steamed mashed potatoes, thick coconut milk, wheat flour, butter, and eggs. Has a natural pandan suji aroma and signature sweet taste topped with raisins. Very popular as an appetizer at parties."
+  },
+  {
+	"name": "Kue Putu Ayu",
+	"price": 3000,
+	"origin": "Jawa Tengah",
+	"desc_id": "Kue spons kukus tradisional bercita rasa manis-gurih yang sangat populer di pulau Jawa. Adonannya menggunakan cetakan khusus berbentuk bunga dengan lapisan parutan kelapa muda gurih di bagian dasar, menghasilkan kombinasi warna hijau pandan dan putih yang kontras serta bertekstur empuk saat dikunyah.",
+	"desc_en": "Traditional steamed sponge cake with a sweet-savory taste, very popular in Java. The batter uses a special flower-shaped mold with a layer of grated young coconut at the base, creating a contrasting green pandan and white color with a soft, chewy texture."
+  },
+  {
+	"name": "Kue Cucur Gula Jawa",
+	"price": 3000,
+	"origin": "Jakarta",
+	"desc_id": "Kue goreng klasik bertekstur berserat rapat yang terbuat dari campuran tepung beras dan larutan gula jawa murni. Pinggirannya tipis renyah terkaramelisasi akibat minyak panas, sementara bagian tengahnya tebal, empuk, berongga, dan memiliki cita rasa manis legit mendalam yang bertahan lama.",
+	"desc_en": "Classic fried cake with a dense fibrous texture made from rice flour and pure palm sugar syrup. The edges are thin and crispy from caramelization in hot oil, while the center is thick, soft, hollow, and has a deep lingering sweet taste."
+  },
+  {
+	"name": "Nagasari Pisang Raja",
+	"price": 3000,
+	"origin": "Indramayu, Jawa Barat",
+	"desc_id": "Kue kukus tradisional berbungkus daun pisang yang terbuat dari adonan bubur tepung beras halus, santan, dan vanili yang bertekstur membal lembut. Di bagian dalamnya terdapat potongan buah pisang raja matang yang manis harum, memberikan kombinasi rasa gurih asin tepung dan manis buah alami.",
+	"desc_en": "Traditional banana-steamed cake wrapped in banana leaves, made from a smooth rice flour porridge, coconut milk, and vanilla with a soft, tender texture. Inside contains sweet fragrant ripe Raja banana pieces, combining savory-sally flour taste with natural fruit sweetness."
+  },
+  {
+	"name": "Kue Cenil Kanji",
+	"price": 3000,
+	"origin": "Yogyakarta",
+	"desc_id": "Kudapan tradisional berwarna-warni cerah berbahan dasar pati singkong atau kanji yang direbus hingga bertekstur sangat kenyal dan elastis. Disajikan secara sederhana dengan parutan kelapa muda gurih dan taburan gula pasir halus, memberikan sensasi mengunyah yang unik di dalam mulut.",
+	"desc_en": "Colorful traditional snack made from cassava starch boiled until very chewy and elastic. Served simply with savory grated young coconut and a sprinkle of fine granulated sugar, providing a unique chewy sensation in the mouth."
+  },
+  {
+	"name": "Kue Apem Kukus Mekar",
+	"price": 3000,
+	"origin": "Cirebon, Jawa Barat",
+	"desc_id": "Kue mangkok mekar tradisional berbahan dasar tepung beras, gula pasir, dan ragi alami dari tape singkong. Melalui proses fermentasi semalaman sebelum dikukus, kue ini menghasilkan tekstur yang sangat empuk, berongga halus, mekar merekah di atasnya, serta memiliki aroma asam manis yang segar.",
+	"desc_en": "Traditional blossoming steamed cupcake made from rice flour, sugar, and natural yeast from cassava tape. After overnight fermentation before steaming, it produces a very soft texture with fine pores, blooming open on top, with a fresh sweet-sour aroma."
+  },
+  {
+	"name": "Kue Dadar Gulung Unti",
+	"price": 3000,
+	"origin": "Jawa",
+	"desc_id": "Kulit dadar atau crepe tipis berwarna hijau segar dari sari daun suji dengan tekstur berpori halus. Kulit tersebut membungkus rapat isian unti kelapa, yaitu parutan kelapa manis lembab yang dimasak bersama gula merah dan daun pandan, memberikan kombinasi tekstur kenyal garing dan manis.",
+	"desc_en": "Thin green crepe from suji leaf extract with a fine porous texture. The skin wraps tightly around unti coconut filling—moist sweet grated coconut cooked with palm sugar and pandan leaves—creating a combination of chewy-crisp texture and sweetness."
+  },
+  {
+	"name": "Kue Talam Pandan",
+	"price": 3000,
+	"origin": "Jakarta",
+	"desc_id": "Kue basah dua lapisan bertekstur lembut kenyal. Lapisan bawah berwarna hijau pekat terbuat dari tepung beras beraroma pandan manis murni, sementara lapisan atasnya berwarna putih kontras yang terbuat dari santan kental asin gurih, menghasilkan paduan rasa manis gurih yang seimbang.",
+	"desc_en": "Soft chewy two-layer wet cake. The bottom layer is deep green made from pandan-scented sweet rice flour, while the top layer is contrasting white made from thick savory-sally coconut milk, creating a balanced sweet-savory flavor."
+  },
+  {
+	"name": "Cantik Manis Mutiara",
+	"price": 3000,
+	"origin": "Jakarta",
+	"desc_id": "Kue basah bening transparan berbahan dasar tepung hunkwe (pati kacang hijau) yang dimasak bersama santan dan gula. Di dalamnya bertabur butiran sagu mutiara merah delima yang kenyal, dibungkus rapi menggunakan plastik mika transparan kecil, bertekstur lembut meleleh di lidah.",
+	"desc_en": "Clear translucent wet cake made from hunkwe flour (mung bean starch) cooked with coconut milk and sugar. Inside are chewy ruby-red sago pearl grains, neatly wrapped in small transparent plastic, with a soft melt-in-the-mouth texture."
+  },
+  {
+	"name": "Kue Ape Pandan",
+	"price": 3000,
+	"origin": "Jakarta",
+	"desc_id": "Sering disebut pancake Betawi, terbuat dari campuran tepung terigu, tepung beras, dan air daun pandan asli. Digoreng menggunakan wajan cekung besi kecil sehingga menghasilkan bagian tengah yang tebal empuk membal dan tepian bundar garing yang sangat tipis dan renyah.",
+	"desc_en": "Often called Betawi pancake, made from a mix of wheat flour, rice flour, and real pandan leaf water. Fried in a small concave iron pan, producing a thick soft fluffy center and very thin crispy round edges."
+  },
+  {
+	"name": "Kue Lekker Cokelat Pisang",
+	"price": 3000,
+	"origin": "Surabaya, Jawa Timur",
+	"desc_id": "Jajanan garing tipis renyah yang dimasak di atas wajan baja bulat rata yang diputar cepat di atas api. Diberi taburan isian irisan pisang kepok matang, meses cokelat manis, dan kental manis, lalu dilipat dua selagi panas renyah menghasilkan kerenyahan maksimal.",
+	"desc_en": "Thin crispy snack cooked on a flat round iron pan that is spun quickly over the fire. Filled with slices of ripe kepok banana, sweet chocolate sprinkles, and condensed milk, then folded in half while still hot and crispy for maximum crunch."
+  },
+  {
+	"name": "Kue Adrem Tolpit",
+	"price": 3000,
+	"origin": "Bantul, Yogyakarta",
+	"desc_id": "Camilan goreng unik dari tepung beras dan gula jawa yang digoreng dalam minyak panas melimpah lalu dijepit menggunakan bilah bambu saat matang sehingga bentuknya mengkerut khas. Memiliki rasa manis gurih berminyak dengan aroma karamel gula kelapa.",
+	"desc_en": "Unique fried snack from rice flour and palm sugar, fried in abundant hot oil then squeezed with bamboo sticks while cooked so it wrinkles into a distinctive shape. Has a sweet savory oily taste with coconut sugar caramel aroma."
+  },
+  {
+	"name": "Kue Pukis",
+	"price": 3000,
+	"origin": "Banyumas, Jawa Tengah",
+	"desc_id": "Kue ragi panggang berbentuk setengah lingkaran tebal empuk membal terbuat dari adonan terigu, santan kental, ragi alami, dan telur. Bagian dasarnya kecokelatan garing sementara bagian atasnya putih empuk berongga halus aroma vanili harum.",
+	"desc_en": "Baked yeast cake shaped like a thick half-circle, soft and fluffy, made from wheat flour batter, thick coconut milk, natural yeast, and eggs. The base is golden brown and crispy while the top is white, soft, with fine pores and fragrant vanilla aroma."
+  },
+  {
+	"name": "Kue Taripang Gula",
+	"price": 3000,
+	"origin": "Makassar, Sulawesi Selatan",
+	"desc_id": "Jajanan pasar goreng tradisional berbentuk lonjong pipih dari adonan tepung ketan putih dan parutan kelapa muda. Sesaat setelah digoreng garing renyah, seluruh kue dicelupkan ke dalam lelehan gula aren panas hingga mengering membentuk kristal.",
+	"desc_en": "Traditional market fried snack in flat oval shape from white glutinous rice flour and grated young coconut. Right after being fried crispy, the whole cake is dipped into hot palm sugar syrup until it dries and forms sugar crystals."
+  },
+  {
+	"name": "Kue Gandos Kelapa",
+	"price": 3000,
+	"origin": "Jawa Tengah",
+	"desc_id": "Jajanan gurih asin berbentuk setengah lingkaran terbuat dari adonan tepung beras dan parutan kelapa muda melimpah yang dimasak di cetakan besi bakar. Menyajikan rasa murni gurih asin kelapa tanpa gula pasir sama sekali di adonannya.",
+	"desc_en": "Savory salty half-moon shaped snack made from rice flour batter and abundant grated young coconut cooked in an iron baking mold. Delivers a pure savory-salty coconut taste with no sugar at all in the batter."
+  },
+  {
+	"name": "Kue Lemet Singkong",
+	"price": 3000,
+	"origin": "Jawa Tengah",
+	"desc_id": "Kue kukus berbungkus daun pisang silinder terbuat dari parutan singkong segar diperas yang dicampur potongan gula merah dan kelapa parut kasar. Teksturnya sangat kenyal lengket terkaramelisasi warna cokelat dengan gurih manis kelapa singkong.",
+	"desc_en": "Cylindrical banana-leaf-wrapped steamed cake made from squeezed fresh grated cassava mixed with palm sugar pieces and coarse grated coconut. Texture is very chewy, sticky, caramelized brown with savory sweet cassava coconut flavor."
+  },
+  {
+	"name": "Es Lilin Kacang",
+	"price": 3000,
+	"origin": "Bandung, Jawa Barat",
+	"desc_id": "Es krim jadul berbentuk silinder panjang dibungkus plastik es lilin murni. Terbuat dari adonan rebusan kacang hijau atau cokelat susu bercampur santan kelapa dan gula pasir yang dibekukan manual di dalam tabung es putar tradisional garing.",
+	"desc_en": "Old-fashioned ice cream in long cylindrical shape wrapped in ice lolly plastic. Made from boiled mung bean or chocolate milk mixture with coconut milk and sugar, frozen manually in a traditional rotating ice tube until crunchy."
+  },
+  {
+	"name": "Kue Klepon",
+	"price": 3500,
+	"origin": "Pasuruan, Jawa Timur",
+	"desc_id": "Kudapan berbentuk bola-bola kecil dari tepung ketan putih yang diberi warna hijau segar dari sari daun suji alami. Bagian dalamnya berisi cairan gula aren pekat yang meleleh seketika saat digigit di dalam mulut, lalu dibalut dengan parutan kelapa muda kukus yang gurih untuk menyeimbangkan rasa manisnya.",
+	"desc_en": "Small ball-shaped snack from white glutinous rice flour colored fresh green with natural suji leaf extract. Inside contains thick palm sugar liquid that instantly melts when bitten in the mouth, then coated with savory steamed grated young coconut to balance the sweetness."
+  },
+  {
+	"name": "Wajik Ketan Aren",
+	"price": 3500,
+	"origin": "Jawa Tengah",
+	"desc_id": "Kudapan manis padat berbentuk jajaran genjang dari beras ketan putih kukus yang dimasak kembali dengan cairan gula aren pekat, santan kental, dan daun pandan. Teksturnya lengket, mengkilap, dan memiliki rasa manis legit karamel yang legit, menjadikannya hidangan wajib dalam upacara adat Jawa.",
+	"desc_en": "Dense sweet diamond-shaped cake from steamed white glutinous rice cooked again with thick palm sugar syrup, thick coconut milk, and pandan leaves. Texture is sticky, glossy, with a rich caramel sweet taste, making it a must-have dish in Javanese traditional ceremonies."
+  },
+  {
+	"name": "Getuk Lindri Singkong",
+	"price": 3500,
+	"origin": "Magelang, Jawa Tengah",
+	"desc_id": "Singkong kukus empuk yang ditumbuk halus bersama gula pasir dan sedikit garam, lalu digiling menggunakan mesin khusus membentuk uluran mie tebal panjang yang dipotong-potong. Berwarna-warni pastel yang cantik dan disajikan bersama taburan parutan kelapa muda gurih di atas permukaannya.",
+	"desc_en": "Soft steamed cassava finely mashed with sugar and a pinch of salt, then ground through a special machine forming thick noodle-like strands that are cut into pieces. Beautiful pastel colors served with a sprinkle of savory grated young coconut on top."
+  },
+  {
+	"name": "Kue Pancong Kelapa",
+	"price": 3500,
+	"origin": "Jakarta",
+	"desc_id": "Kue gurih berbentuk setengah lingkaran yang terbuat dari adonan tepung beras, santan murni kental, dan parutan kelapa muda. Dimasak tanpa gula pasir, menyajikan cita rasa murni gurih asin kelapa bakar yang dominan, disajikan hangat dengan taburan gula pasir kasar di atasnya.",
+	"desc_en": "Savory half-moon shaped cake made from rice flour batter, pure thick coconut milk, and grated young coconut. Cooked without sugar, delivering a dominant savory-salty roasted coconut taste, served warm with coarse granulated sugar sprinkled on top."
+  },
+  {
+	"name": "Kue Carabikang Mekar",
+	"price": 3500,
+	"origin": "Jawa Tengah",
+	"desc_id": "Kue basah berbahan tepung beras dan santan panas yang dipanggang di cetakan besi bundar cekung. Saat matang dicungkil menggunakan teknik khusus dibantu sebilah bambu hingga bagian tengahnya merekah mekar menyerupai bunga mawar penuh warna-warni cerah bertekstur serat.",
+	"desc_en": "Wet cake made from rice flour and hot coconut milk baked in round concave iron molds. When cooked, it is pried using a special technique with a bamboo stick until the center blossoms open like a rose, full of bright colors with a fibrous texture."
+  },
+  {
+	"name": "Gemblong Gula Merah",
+	"price": 3500,
+	"origin": "Jawa Barat",
+	"desc_id": "Kue goreng lonjong bertekstur sangat kenyal dari adonan tepung ketan putih dan kelapa parut muda. Setelah digoreng matang, seluruh permukaan kue dibalut lapisan karamel gula aren pekat (besta) yang mengering keras mengkilap memberikan rasa manis garing di luar.",
+	"desc_en": "Fried oval cake with a very chewy texture from white glutinous rice flour and young grated coconut. After being fried, the entire cake surface is coated with a thick palm sugar caramel layer that dries hard and glossy, giving a sweet crispy outside."
+  },
+  {
+	"name": "Kue Bangkit Sagu",
+	"price": 3500,
+	"origin": "Riau",
+	"desc_id": "Kue kering tradisional Melayu berbahan tepung sagu tani yang disangrai dengan daun pandan, dicampur santan kelapa kental dan gula. Kue ini langsung lumer mencair seketika di dalam mulut saat digigit, meninggalkan rasa manis gurih kelapa yang lembut.",
+	"desc_en": "Traditional Malay dry cookie made from sago flour toasted with pandan leaves, mixed with thick coconut milk and sugar. This cookie instantly melts and dissolves in the mouth when bitten, leaving a soft sweet savory coconut taste."
+  },
+  {
+	"name": "Kue Baruasa Kelapa",
+	"price": 3500,
+	"origin": "Makassar, Sulawesi Selatan",
+	"desc_id": "Kue kering khas suku Bugis-Makassar berbentuk bulat pipih retak, terbuat dari tepung beras sangrai bercampur kelapa parut sangrai kering dan gula aren murni. Bertekstur agak keras namun garing renyah dengan aroma kelapa sangrai yang sangat harum.",
+	"desc_en": "Dry cake typical of the Bugis-Makassar tribe, round flat and cracked, made from toasted rice flour mixed with dry toasted grated coconut and pure palm sugar. Has a rather hard yet crispy crunchy texture with a very fragrant roasted coconut aroma."
+  },
+  {
+	"name": "Kue Cubit Setengah Matang",
+	"price": 3500,
+	"origin": "Jakarta",
+	"desc_id": "Kue basah populer berukuran kecil bundar terbuat dari terigu, telur, dan gula yang dipanggang sebentar di cetakan baja. Diangkat saat bagian atasnya masih berupa adonan cair kental meleleh hangat bercampur meses cokelat gurih manis.",
+	"desc_en": "Popular small round wet cake made from flour, eggs, and sugar, briefly baked in an iron mold. Removed while the top is still thick hot melted liquid batter mixed with sweet savory chocolate sprinkles."
+  },
+  {
+	"name": "Kue Gandasturi Kacang Hijau",
+	"price": 3500,
+	"origin": "Jakarta",
+	"desc_id": "Kudapan goreng berbentuk bundar pipih berisi adonan pasta kacang hijau kupas manis yang direbus matang padat. Adonan isi tersebut kemudian dicelupkan ke dalam larutan tepung beras encer asin gurih lalu digoreng garing kecokelatan renyah.",
+	"desc_en": "Flat round fried snack filled with sweet boiled mung bean paste that is cooked until solid. The filling is then dipped into thin savory-salty rice flour batter and fried until golden brown and crispy."
+  },
+  {
+	"name": "Kue Bhoi Ikan",
+	"price": 3500,
+	"origin": "Aceh",
+	"desc_id": "Kue spons kering tradisional khas Aceh yang dipanggang menggunakan cetakan kuningan berbentuk ikan atau bunga. Memiliki tekstur luar yang garing renyah kering keras namun bagian dalamnya empuk berpori besar dengan rasa manis telur murni.",
+	"desc_en": "Traditional dry sponge cake typical of Aceh, baked using a brass mold shaped like a fish or flower. Has a crispy dry hard exterior but a soft interior with large pores and a pure sweet egg taste."
+  },
+  {
+	"name": "Kue Laklak",
+	"price": 3500,
+	"origin": "Bali",
+	"desc_id": "Pancake tradisional khas Bali berukuran kecil bundar berongga terbuat dari tepung beras dan air suji hijau asli yang dipanggang menggunakan cetakan tanah liat cekung. Disajikan hangat dengan taburan kelapa parut dan siraman juruh gula bali kental.",
+	"desc_en": "Traditional Balinese mini pancake, small round and hollow, made from rice flour and real green suji water, baked using concave clay molds. Served warm with grated coconut sprinkle and thick Balinese palm sugar syrup drizzle."
+  },
+  {
+	"name": "Kue Kembang Goyang",
+	"price": 3500,
+	"origin": "Jakarta",
+	"desc_id": "Kue kering renyah berbentuk kelopak bunga yang dibuat dengan mencelupkan cetakan besi bermotif ke dalam adonan tepung beras, telur, santan, dan biji wijen, lalu digoyang-goyangkan di dalam minyak goreng panas hingga terlepas garing.",
+	"desc_en": "Crispy dry flower-petal-shaped cookie made by dipping a patterned iron mold into rice flour, egg, coconut milk, and sesame seed batter, then shaken in hot frying oil until it releases and becomes crispy."
+  },
+  {
+	"name": "Kue Akar Kelapa",
+	"price": 3500,
+	"origin": "Jakarta",
+	"desc_id": "Kue kering goreng renyah berbentuk silinder panjang bergerigi mirip akar pohon kelapa. Terbuat dari adonan tepung ketan, kuning telur, mentega, dan gula pasir yang dicetak manual memakai spuit bergerigi langsung ke minyak goreng panas garing.",
+	"desc_en": "Crispy fried dry cookie shaped like long serrated cylinders resembling coconut tree roots. Made from glutinous rice flour batter, egg yolks, butter, and sugar, piped directly into hot frying oil using a serrated piping tip until crispy."
+  },
+  {
+	"name": "Kue Puthu Tegal",
+	"price": 3500,
+	"origin": "Tegal, Jawa Tengah",
+	"desc_id": "Kue basah berbahan dasar tepung ketan yang dicampur parutan pisang raja dan kelapa muda, dikukus matang dalam cetakan mangkok. Bertekstur pulen kenyal lembut dengan cita rasa dominan gurih kelapa dan manis alami buah pisang raja madu.",
+	"desc_en": "Wet cake made from glutinous rice flour mixed with grated Raja banana and young coconut, steamed in a bowl-shaped mold. Has a soft chewy texture with a dominant savory coconut taste and natural sweetness from honey Raja banana."
+  },
+  {
+	"name": "Kue Moho Merah",
+	"price": 3500,
+	"origin": "Semarang, Jawa Tengah",
+	"desc_id": "Kue hantaran tradisional peranakan Tionghoa Semarang berbentuk mekar merekah berwarna merah muda cerah. Terbuat dari adonan tepung terigu dan tape singkong melalui fermentasi ragi, bertekstur padat membal padat mirip bakpao manis kukus.",
+	"desc_en": "Traditional gift cake of Semarang Chinese Peranakan, blooming open in bright pink color. Made from wheat flour and cassava tape batter through yeast fermentation, with a dense fluffy texture similar to sweet steamed buns."
+  },
+  {
+	"name": "Jaje Laklak Suji",
+	"price": 3500,
+	"origin": "Tabanan, Bali",
+	"desc_id": "Kue serabi mini khas Tabanan Bali berwarna hijau tua pekat dari perasan daun suji alami murni. Dimasak di atas piringan tanah liat bakar tanpa minyak, disajikan dengan siraman parutan kelapa segar dan gula kelapa cair pekat yang legit.",
+	"desc_en": "Mini Balinese Tabanan pancake in deep dark green color from pure natural suji leaf extract. Cooked on a clay baking disk without oil, served with fresh grated coconut drizzle and thick sweet palm sugar syrup."
+  },
+  {
+	"name": "Onde-Onde Kacang Hijau",
+	"price": 4000,
+	"origin": "Mojokerto, Jawa Timur",
+	"desc_id": "Gorengan bulat dari tepung ketan yang kenyal, permukaannya dibalut penuh dengan biji wijen renyah. Bagian dalamnya diisi dengan tumbukan padat pasta kacang hijau kupas yang dimasak manis, menciptakan sensasi gurih garing di luar sekaligus empuk padat di dalam saat dinikmati selagi hangat.",
+	"desc_en": "Chewy round glutinous rice flour fritters, the surface fully coated with crispy sesame seeds. The inside is filled with dense mashed mung bean paste cooked sweet, creating a savory crispy outside and soft dense inside when enjoyed warm."
+  },
+  {
+	"name": "Kue Ku Kacang Hijau",
+	"price": 4000,
+	"origin": "Jakarta (Peranakan)",
+	"desc_id": "Kue basah dari tepung ketan kenyal berwarna merah menyala yang dicetak menyerupai cangkang kura-kura sebagai lambang kemakmuran. Isian dalamnya berupa pasta kacang hijau manis halus, dengan permukaan luar yang licin mengkilap karena diolesi minyak kelapa murni sesaat setelah dikukus matang.",
+	"desc_en": "Wet cake from chewy red-colored glutinous rice flour molded to resemble a turtle shell as a symbol of prosperity. The filling is smooth sweet mung bean paste, with a glossy slippery outer surface from being coated with pure coconut oil right after steaming."
+  },
+  {
+	"name": "Lupis Ketan Segitiga",
+	"price": 4000,
+	"origin": "Yogyakarta",
+	"desc_id": "Beras ketan putih murni yang dibungkus daun pisang berbentuk segitiga rapat lalu direbus berjam-jam hingga menjadi kenyal padat. Kudapan tradisional ini disajikan dengan taburan kelapa parut segar yang dikukus dan disiram saus kinca gula aren kental yang manis melimpah saat digigit.",
+	"desc_en": "Pure white glutinous rice wrapped tightly in banana leaves in a triangular shape, then boiled for hours until chewy and solid. This traditional snack is served with a sprinkle of steamed fresh grated coconut and drizzled with thick sweet palm sugar kinca syrup when bitten."
+  },
+  {
+	"name": "Kue Bugis Ketan Hitam",
+	"price": 4000,
+	"origin": "Makassar, Sulawesi Selatan",
+	"desc_id": "Kue basah tradisional berbahan tepung ketan hitam kenyal membungkus isian unti kelapa murni, yaitu parutan kelapa muda yang dimasak bersama gula kelapa aromatik. Dibungkus rapi dengan daun pisang muda berbentuk kerucut kecil lalu dikukus hingga matang dan menghasilkan aroma harum.",
+	"desc_en": "Traditional wet cake made from chewy black glutinous rice flour wrapping pure coconut unti filling—grated young coconut cooked with aromatic palm sugar. Neatly wrapped in young banana leaves in small cone shapes then steamed until cooked, producing a fragrant aroma."
+  },
+  {
+	"name": "Kue Pastel Sayuran",
+	"price": 4000,
+	"origin": "Jakarta",
+	"desc_id": "Pastry goreng berbentuk kantong dengan pinggiran dipilin rapi, bertekstur renyah garing di luar dengan bintik-bintik renyah. Berisi potongan wortel, kentang dadu, bihun jagung gurih, dan irisan telur rebus, biasa disajikan bersama sambal cuka cair encer bercita rasa asam pedas.",
+	"desc_en": "Fried pastry pouch with neatly twisted edges, crispy crunchy outside with crunchy speckles. Filled with carrot pieces, diced potato, savory rice vermicelli, and sliced boiled egg, usually served with thin sour spicy vinegar sambal."
+  },
+  {
+	"name": "Kue Rangi Gula Semut",
+	"price": 4000,
+	"origin": "Jakarta",
+	"desc_id": "Kue tradisional panggang berbahan dasar tepung sagu tani yang dicampur parutan kelapa tua kasar. Dimasak menggunakan cetakan besi beralur khusus di atas api arang hingga garing kering tanpa air, lalu disiram saus gula aren cair kental yang telah dilelehkan hingga lengket.",
+	"desc_en": "Traditional grilled cake made from sago flour mixed with coarse old grated coconut. Cooked using a special grooved iron mold over charcoal fire until dry crispy without water, then drizzled with thick melted sticky palm sugar syrup."
+  },
+  {
+	"name": "Kue Clorot Aren",
+	"price": 4000,
+	"origin": "Purworejo, Jawa Tengah",
+	"desc_id": "Kue kenyal unik dari tepung beras dan gula aren yang dituangkan ke dalam gulungan janur kelapa muda berbentuk terompet kerucut panjang. Dikukus matang, cara memakannya unik dengan mendorong bagian bawah janur ke atas memakai jari hingga adonan kenyalnya keluar.",
+	"desc_en": "Unique chewy cake from rice flour and palm sugar poured into young coconut leaf rolls shaped like long cone trumpets. Steamed until cooked, the unique way to eat it is by pushing the bottom of the leaf upward with a finger until the chewy dough comes out."
+  },
+  {
+	"name": "Putu Bambu",
+	"price": 4000,
+	"origin": "Medan, Sumatera Utara",
+	"desc_id": "Butiran tepung beras bertekstur kasar beraroma pandan yang diisi gula aren, dimasukkan ke dalam potongan bumbung bambu kecil, lalu dikukus di atas uap tekanan tinggi dari lubang uap boiler. Disajikan hangat dengan taburan kelapa parut dan gula pasir kasar.",
+	"desc_en": "Coarse-textured pandan-scented rice flour grains filled with palm sugar, inserted into small bamboo tube pieces, then steamed over high-pressure steam from a boiler steam vent. Served warm with grated coconut sprinkle and coarse granulated sugar."
+  },
+  {
+	"name": "Kue Jorong-Jorong",
+	"price": 4000,
+	"origin": "Pontianak, Kalimantan Barat",
+	"desc_id": "Kue basah kukus khas Kalimantan Barat berbahan tepung beras dan santan kelapa encer. Adonan dituang langsung ke dalam wadah takir kotak persegi dari daun pisang raja yang dasarnya sudah diberi taburan gula pasir manis murni, menghasilkan rasa gurih lembut meleleh.",
+	"desc_en": "Wet steamed cake typical of West Kalimantan made from rice flour and diluted coconut milk. Batter is poured directly into square takir containers made from banana leaves whose base is already sprinkled with pure sweet sugar, producing a soft melt-in-the-mouth savory taste."
+  },
+  {
+	"name": "Kue Semprong Wijen",
+	"price": 4000,
+	"origin": "Jawa Barat",
+	"desc_id": "Kue kering renyah tipis yang dibuat dari tepung beras, telur, gula, dan taburan biji wijen. Adonannya dijepit di antara cetakan besi bermotif ukir tradisional di atas api arang, lalu digulung silindris selagi panas menghasilkan tekstur renyah garing aroma panggang.",
+	"desc_en": "Thin crispy dry cookie made from rice flour, eggs, sugar, and a sprinkle of sesame seeds. The batter is clamped between traditional carved iron molds over charcoal fire, then rolled into cylinders while hot, producing a crispy crunchy texture with roasted aroma."
+  },
+  {
+	"name": "Geplak",
+	"price": 4000,
+	"origin": "Bantul, Yogyakarta",
+	"desc_id": "Kudapan manis tradisional berbentuk bulatan kasar warna-warni terang terbuat dari parutan kelapa muda melimpah yang dimasak kental bersama gula pasir atau gula aren hingga mengering. Teksturnya berserat kasar kelapa dengan rasa manis pekat.",
+	"desc_en": "Traditional sweet snack in rough colorful balls made from abundant grated young coconut cooked thick with sugar or palm sugar until dry. Has a coarse coconut fibrous texture with an intense sweet taste."
+  },
+  {
+	"name": "Kue Tetu Gula Aren",
+	"price": 4000,
+	"origin": "Palu, Sulawesi Tengah",
+	"desc_id": "Kue perahu basah khas Sulawesi Tengah berupa takir daun pandan besar berisi larutan gula aren cair di bagian dasar yang ditutup adonan tepung terigu dan santan kental, lalu dikukus matang. Menghasilkan rasa gurih asin santan di atas dan manis aren di bawah.",
+	"desc_en": "Wet boat-shaped cake typical of Central Sulawesi, a large pandan leaf takir containing liquid palm sugar solution at the base, covered with wheat flour and thick coconut milk batter, then steamed until cooked. Produces a savory-salty coconut taste on top and sweet palm sugar below."
+  },
+  {
+	"name": "Kue Balok Cokelat",
+	"price": 4000,
+	"origin": "Garut, Jawa Barat",
+	"desc_id": "Kue panggang padat berbentuk persegi balok tebal mirip arang kayu, terbuat dari adonan tepung terigu dan cokelat pekat. Dimasak menggunakan cetakan besi dengan arang membara di bawah dan di atas tutupnya, menghasilkan tekstur luar padat dan dalam meleleh.",
+	"desc_en": "Dense baked cake shaped like a thick rectangular block resembling charcoal, made from wheat flour and dark chocolate batter. Cooked using an iron mold with glowing embers both below and on the lid, producing a dense outside and melting inside."
+  },
+  {
+	"name": "Kue Halua Singkong",
+	"price": 4000,
+	"origin": "Langkat, Sumatera Utara",
+	"desc_id": "Manisan padat tradisional peninggalan kesultanan Melayu Langkat berbahan dasar singkong atau buah parutan kasar yang direbus berjam-jam bersama larutan gula merah murni hingga terkaramelisasi mengeras pekat cokelat tua mengkilap manis.",
+	"desc_en": "Traditional solid candy from the Langkat Malay sultanate, made from cassava or coarse grated fruit boiled for hours with pure palm sugar solution until caramelized, turning hard, thick, glossy dark brown, and sweet."
+  },
+  {
+	"name": "Kue Bendu",
+	"price": 4000,
+	"origin": "Jembrana, Bali",
+	"desc_id": "Kue basah tradisional Bali berbahan tepung ketan putih yang didadar tipis di atas wajan rata tanpa minyak, lalu diisi campuran unti kelapa parut manis gula bali aromatik dan dilipat berbentuk persegi panjang pipih lembut lembab.",
+	"desc_en": "Traditional Balinese wet cake made from white glutinous rice flour, pan-fried thin on a flat pan without oil, then filled with a mix of sweet Balinese palm sugar grated coconut and folded into a flat soft moist rectangle."
+  },
+  {
+	"name": "Kue Bagiak Kering",
+	"price": 4000,
+	"origin": "Banyuwangi, Jawa Timur",
+	"desc_id": "Kue kering tradisional berbentuk silinder lonjong putih kecokelatan terbuat dari campuran tepung sagu, kelapa parut sangrai, telur, dan bumbu keningar (kayu manis). Bertekstur keras renyah garing saat digigit namun lumer lezat di mulut.",
+	"desc_en": "Traditional dry cookie in whitish-brown oval cylinder shape made from a mix of sago flour, toasted grated coconut, eggs, and keningar spice (cinnamon). Has a hard crispy crunchy texture when bitten yet deliciously melts in the mouth."
+  },
+  {
+	"name": "Kue Kamir Terigu",
+	"price": 4000,
+	"origin": "Pemalang, Jawa Tengah",
+	"desc_id": "Kue panggang empuk bundar tebal mirip dorayaki adaptasi kuliner Arab Pemalang. Terbuat dari adonan fermentasi tepung terigu, mentega, telur, dan tape singkong halus, menghasilkan serat bagian dalam yang empuk lembut legit beraroma ragi wangi.",
+	"desc_en": "Soft thick round baked cake similar to dorayaki, adapted from Pemalang Arab cuisine. Made from fermented wheat flour batter, butter, eggs, and smooth cassava tape, producing soft tender moist interior fibers with fragrant yeast aroma."
+  },
+  {
+	"name": "Kue Putu Lanang",
+	"price": 4000,
+	"origin": "Malang, Jawa Timur",
+	"desc_id": "Kue putu beras pandan legendaris dari Malang yang dikukus menggunakan potongan bambu kecil di atas corong uap panas. Berisi gula jawa cair meleleh di tengahnya dan disajikan bersama parutan kelapa muda gurih melimpah di pincuk daun.",
+	"desc_en": "Legendary pandan rice putu from Malang, steamed using small bamboo pieces over a hot steam funnel. Contains melting liquid palm sugar in the center and is served with abundant savory grated young coconut in a banana leaf plate."
+  },
+  {
+	"name": "Kue Celorot",
+	"price": 4000,
+	"origin": "Lombok, NTB",
+	"desc_id": "Kue kenyal ketan khas suku Sasak Lombok berbahan tepung beras, santan kelapa, dan gula aren sasak murni. Adonan dikukus di dalam lilitan daun kelapa muda (janur) membentuk spiral kerucut panjang, bertekstur membal lembut manis gurih.",
+	"desc_en": "Chewy glutinous cake typical of the Sasak tribe of Lombok, made from rice flour, coconut milk, and pure Sasak palm sugar. The batter is steamed inside young coconut leaf spirals (janur) forming long cone spirals, with a soft tender sweet savory texture."
+  },
+  {
+	"name": "Kue Kompyang",
+	"price": 4000,
+	"origin": "Solo, Jawa Tengah",
+	"desc_id": "Roti panggang keras kering berbentuk bulat pipih berlubang tengah mirip donat bertabur wijen melimpah peninggalan peranakan di Solo. Memiliki kulit luar cokelat tua garing keras dengan bagian dalam padat gurih beraroma ragi tradisional.",
+	"desc_en": "Hard dry baked bread shaped like a flat round donut with a hole in the center, abundantly sprinkled with sesame seeds, a legacy of Peranakan in Solo. Has a dark brown hard crispy skin with a dense savory interior and traditional yeast aroma."
+  },
+  {
+	"name": "Es Cuing",
+	"price": 4000,
+	"origin": "Cirebon, Jawa Barat",
+	"desc_id": "Minuman es cincau hijau tradisional khas Cirebon terbuat dari remasan daun cuing alami bertekstur jeli lembut licin. Disajikan dengan siraman santan matang gurih asin dan air gula merah jawa cair yang telah direbus lama dengan daun pandan wangi.",
+	"desc_en": "Traditional green grass jelly drink typical of Cirebon, made from natural cuing leaf kneading with a soft slippery jelly texture. Served with savory-salty cooked coconut milk drizzle and liquid red palm sugar that has been boiled long with fragrant pandan leaves."
+  },
+  {
+	"name": "Wedang Secang Kayu",
+	"price": 4000,
+	"origin": "Yogyakarta",
+	"desc_id": "Minuman seduhan herbal tradisional berwarna merah jambu alami berasal dari serutan kayu secang kering yang direbus bersama batang serai geprek, jahe, dan gula batu murni. Memiliki khasiat melancarkan peredaran darah serta menghangatkan badan.",
+	"desc_en": "Traditional herbal infusion drink naturally pink in color from dried secang wood shavings boiled with crushed lemongrass stalks, ginger, and pure rock sugar. Has properties to improve blood circulation and warm the body."
+  },
+  {
+	"name": "Wedang Pokak",
+	"price": 4000,
+	"origin": "Probolinggo, Jawa Timur",
+	"desc_id": "Minuman hangat rempah khas pesisir utara madu-probolinggo terbuat dari rebusan jahe, kayu manis, cengkeh, kapulaga, merica bubuk sedikit, serai, dan gula merah murni. Berkhasiat tinggi menghilangkan masuk angin dan pegal linu tubuh.",
+	"desc_en": "Warm spiced drink typical of the Madura-Probolinggo north coast made from boiled ginger, cinnamon, cloves, cardamom, a little ground pepper, lemongrass, and pure palm sugar. Highly effective for relieving colds and body aches."
+  },
+  {
+	"name": "Wedang Pekak",
+	"price": 4000,
+	"origin": "Demak, Jawa Tengah",
+	"desc_id": "Minuman hangat khas Demak berbahan utama rempah pekak atau bunga lawang bintang yang direbus bersama jahe, serai, kayu manis, cengkeh, dan gula jawa murni. Menghasilkan kuah cokelat wangi dengan aroma jamu herbal pengusir dingin tubuh.",
+	"desc_en": "Warm drink typical of Demak made from the main ingredient pekak or star anise spice boiled with ginger, lemongrass, cinnamon, cloves, and pure palm sugar. Produces a brown fragrant broth with a herbal jamu aroma that wards off body cold."
+  },
+  {
+	"name": "Wedang Salam Kayu Manis",
+	"price": 4000,
+	"origin": "Jawa Tengah",
+	"desc_id": "Minuman seduhan kesehatan herbal terbuat dari rebusan daun salam segar pilihan yang dipadu dengan batang kayu manis kering dan gula batu bening tradisional murni. Menghasilkan aroma khas rempah berkhasiat menurunkan kadar kolesterol.",
+	"desc_en": "Herbal health infusion drink made from boiled selected fresh salam leaves combined with dried cinnamon sticks and pure traditional clear rock sugar. Produces a distinctive spice aroma beneficial for lowering cholesterol levels."
+  },
+  {
+	"name": "Lemper Ayam Bakar",
+	"price": 4500,
+	"origin": "Yogyakarta",
+	"desc_id": "Beras ketan gurih bertabur santan murni dengan isian suwiran daging ayam bumbu putih tradisional yang padat. Dibungkus rapat dengan daun pisang batu, lalu dibakar sebentar di atas bara api untuk mengeluarkan aroma wangi hangus daun kelapa yang meresap ke dalam ketan pulen tersebut.",
+	"desc_en": "Savory glutinous rice sprinkled with pure coconut milk filled with dense traditional seasoned shredded chicken. Wrapped tightly in banana leaves, then briefly grilled over embers to release the fragrant burnt coconut leaf aroma that seeps into the soft sticky rice."
+  },
+  {
+	"name": "Wingko Babat",
+	"price": 4500,
+	"origin": "Babat, Lamongan",
+	"desc_id": "Kue panggang tradisional padat yang terbuat dari kombinasi tepung ketan putih dan kelapa muda parut dalam jumlah melimpah. Menghasilkan rasa gurih alami kelapa bercampur manis tebu yang legit dan beraroma gosong eksotis karena dimasak langsung di atas plat besi panas.",
+	"desc_en": "Dense traditional baked cake made from a combination of white glutinous rice flour and abundant young grated coconut. Produces a natural savory coconut taste mixed with sweet sugarcane and an exotic burnt aroma from being cooked directly on hot iron plates."
+  },
+  {
+	"name": "Serabi Oncom",
+	"price": 4500,
+	"origin": "Bandung, Jawa Barat",
+	"desc_id": "Pancake tradisional berbahan tepung beras dan kelapa parut yang dimasak di cetakan tanah liat bakar tanpa minyak. Bagian atasnya diberi taburan tumisan oncom gurih bumbu pedas aromatik daun kemangi, menyajikan rasa gurih asin pedas beraroma asap tradisional.",
+	"desc_en": "Traditional pancake made from rice flour and grated coconut cooked in clay baking molds without oil. The top is sprinkled with savory spicy seasoned oncom stir-fry with aromatic basil leaves, presenting a savory-salty-spicy taste with traditional smoky aroma."
+  },
+  {
+	"name": "Kole-Kole Gula Merah",
+	"price": 4500,
+	"origin": "Ambon, Maluku",
+	"desc_id": "Kue basah bertekstur pekat padat dari adonan tepung hunkwe yang dimasak bersama rebusan gula merah murni dan santan kelapa hingga mengental matang. Disajikan dingin dengan siraman minyak kelapa asli dan taburan tahi minyak (blondo) yang renyah gurih di atasnya.",
+	"desc_en": "Wet cake with a thick dense texture from hunkwe flour cooked with pure palm sugar and coconut milk until thick and done. Served cold with a drizzle of real coconut oil and a sprinkle of crispy savory oil sediment on top."
+  },
+  {
+	"name": "Prol Tape",
+	"price": 4500,
+	"origin": "Jember, Jawa Timur",
+	"desc_id": "Kue padat panggang tradisional berbahan dasar tape singkong ranum manis khas Jember, dicampur tepung terigu, telur, dan susu. Menghasilkan tekstur kue basah yang padat lembut dengan rasa asam manis tape yang kuat serta aroma mentega panggang.",
+	"desc_en": "Traditional dense baked cake made from sweet ripe cassava tape typical of Jember, mixed with wheat flour, eggs, and milk. Produces a dense soft moist cake texture with a strong sweet-sour cassava tape taste and baked butter aroma."
+  },
+  {
+	"name": "Kue Borongko Pisang",
+	"price": 4500,
+	"origin": "Makassar, Sulawesi Selatan",
+	"desc_id": "Kudapan kukus premium khas Bugis berbahan dasar pisang kepok matang yang dihaluskan bersama telur ayam, santan murni, gula, dan sedikit garam. Dibungkus daun pisang berbentuk takir kerucut rapat lalu dikukus hingga memadat lembut seperti puding pisang.",
+	"desc_en": "Premium steamed snack typical of Bugis, made from ripe kepok banana mashed with eggs, pure coconut milk, sugar, and a pinch of salt. Wrapped in banana leaves in tight cone takir shapes then steamed until compact and soft like banana pudding."
+  },
+  {
+	"name": "Kue Timphan Srikaya",
+	"price": 4500,
+	"origin": "Aceh",
+	"desc_id": "Kue basah khas hari raya Aceh berbentuk pipih panjang dibungkus daun pisang muda. Terbuat dari adonan tepung ketan dicampur pisang raja atau labu tanah kukus halus yang melingkari isian pasta srikaya telur manis aromatik pandan.",
+	"desc_en": "Wet cake typical of Aceh holidays, flat elongated shape wrapped in young banana leaves. Made from glutinous rice flour mixed with ripe banana or steamed sweet potato, surrounding a filling of aromatic pandan egg srikaya paste."
+  },
+  {
+	"name": "Kue Moaci Swikee",
+	"price": 4500,
+	"origin": "Semarang, Jawa Tengah",
+	"desc_id": "Bola ketan kenyal elastis khas Semarang berisi tumbukan padat kacang tanah sangrai manis gurih. Permukaan luar kue dibalut dengan tepung putih sangrai atau biji wijen sangrai melimpah untuk mencegah kelengketan saat dipegang tangan.",
+	"desc_en": "Chewy elastic glutinous rice ball typical of Semarang filled with dense mashed roasted peanuts sweet savory. The outer surface is coated with toasted white flour or abundant toasted sesame seeds to prevent stickiness when held."
+  },
+  {
+	"name": "Serabi Notosuman",
+	"price": 5000,
+	"origin": "Solo, Jawa Tengah",
+	"desc_id": "Serabi tipis lembut bertekstur basah di bagian tengah yang kaya akan santan gurih, dimasak menggunakan wajan tanah liat kecil di atas bara arang. Tepian serabi berkerak tipis garing kecokelatan dengan aroma panggangan alami yang khas, biasanya disajikan polos atau diberi taburan meses cokelat murni.",
+	"desc_en": "Thin soft pancake with a moist center rich in savory coconut milk, cooked using small clay pans over charcoal embers. The edges have thin crispy golden brown crust with a distinctive natural grilling aroma, usually served plain or topped with pure chocolate sprinkles."
+  },
+  {
+	"name": "Semar Mendem Daging",
+	"price": 5000,
+	"origin": "Solo, Jawa Tengah",
+	"desc_id": "Kudapan gurih pelengkap pesta yang mirip lemper ayam, namun nasi ketan kukus berisi daging ayam suwir gurih ini tidak dibungkus daun pisang, melainkan dibalut oleh lembaran kulit dadar telur tipis murni yang gurih, lembut, dan meleleh di mulut saat dinikmati bersama teh hangat.",
+	"desc_en": "Savory party snack similar to chicken lemper, but the savory shredded chicken-filled glutinous rice is not wrapped in banana leaves, instead coated in thin pure egg crepe sheets that are savory, soft, and melt in the mouth when enjoyed with warm tea."
+  },
+  {
+	"name": "Panada Cakalang Pedas",
+	"price": 5000,
+	"origin": "Manado, Sulawesi Utara",
+	"desc_id": "Roti goreng empuk berbentuk bulan sabit dengan pinggiran berpola pilin manual yang rapi. Bagian dalamnya diisi penuh dengan suwiran ikan cakalang asap yang dimasak kering bersama bumbu pedas, kemangi, dan daun jeruk wangi, menciptakan rasa gurih pedas khas semenanjung utara.",
+	"desc_en": "Soft fried crescent-shaped bread with neatly hand-twisted patterned edges. The inside is fully filled with shredded smoked skipjack tuna cooked dry with spicy seasoning, basil, and fragrant lime leaves, creating a savory spicy taste typical of the northern peninsula."
+  },
+  {
+	"name": "Kue Jongkong",
+	"price": 5000,
+	"origin": "Bangka Belitung",
+	"desc_id": "Kue basah bertekstur bubur sumsum lembut dalam cup transparan. Terdiri dari tiga lapisan rasa asli: saus cairan gula aren pekat di dasar wadah, lapisan bubur hijau pandan wangi ditengah, dan lapisan bubur putih santan gurih di atas, dimakan dengan cara diaduk sendok.",
+	"desc_en": "Wet cake with soft porridge-like texture in a transparent cup. Consists of three natural layers: thick palm sugar liquid at the bottom, fragrant green pandan porridge in the middle, and savory white coconut milk porridge on top, eaten by stirring with a spoon."
+  },
+  {
+	"name": "Kue Putu Mayang",
+	"price": 5000,
+	"origin": "Jakarta",
+	"desc_id": "Kue basah tepung beras yang dicetak menyerupai gumpalan mie keriting kecil berwarna-warni cantik. Dikukus matang dan disajikan dengan siraman kuah kinca gurih manis melimpah rasa santan rebusan gula aren asli, sangat cocok untuk hidangan berbuka puasa.",
+	"desc_en": "Wet rice flour cake molded to resemble a tangle of beautiful colorful small curly noodles. Steamed until cooked and served with a generous drizzle of sweet savory kinca sauce made from boiled coconut milk and real palm sugar, perfect for breaking the fast."
+  },
+  {
+	"name": "Madumongso Ketan Hitam",
+	"price": 5000,
+	"origin": "Ponorogo, Jawa Timur",
+	"desc_id": "Kudapan legit mirip jenang yang terbuat dari fermentasi tape ketan hitam murni. Tape tersebut dimasak kembali bersama santan kental dan gula kelapa berjam-jam hingga mengering hitam pekat mengkilap, dibungkus kertas minyak warna-warni berumbai tradisional.",
+	"desc_en": "Sweet snack similar to jenang made from pure fermented black glutinous rice tape. The tape is cooked again with thick coconut milk and palm sugar for hours until dry, glossy, pitch black, wrapped in colorful traditional fringed wax paper."
+  },
+  {
+	"name": "Kue Sikaporo",
+	"price": 5000,
+	"origin": "Suku Bugis, Sulawesi Selatan",
+	"desc_id": "Kue basah kukus dua lapisan warna hijau pandan dan kuning telur berbentuk kelopak bunga yang dicetak khusus. Berbahan dasar kuning telur melimpah, santan kental, dan air pandan asli tanpa tepung terigu, menghasilkan tekstur sangat lembut mirip puding.",
+	"desc_en": "Wet steamed two-layer cake in green pandan and yellow egg colors shaped like flower petals using a special mold. Made from abundant egg yolks, thick coconut milk, and real pandan water without any wheat flour, producing a very soft pudding-like texture."
+  },
+  {
+	"name": "Kue Amparan Tatak",
+	"price": 5000,
+	"origin": "Banjarmasin, Kalimantan Selatan",
+	"desc_id": "Kue talam raksasa khas Banjar dua lapisan: lapisan bawah dari tepung beras, santan, dan potongan pisang kepok matang yang melimpah, ditutup lapisan atas berupa vla santan kental gurih bertekstur lembut mirip bubur sumsum padat manis.",
+	"desc_en": "Giant two-layer talam cake typical of Banjar: the bottom layer from rice flour, coconut milk, and abundant ripe kepok banana pieces, covered with a top layer of thick savory coconut milk vla with a soft texture similar to sweet dense porridge."
+  },
+  {
+	"name": "Kue Katirisala Ketan",
+	"price": 5000,
+	"origin": "Suku Bugis, Sulawesi Selatan",
+	"desc_id": "Kue basah dua lapisan: lapisan bawah berupa nasi ketan hitam atau putih yang dikukus gurih padat dengan santan, dilapisi bagian atas berupa adonan srikaya gula merah dan telur bebek kocok kaku lembut berongga manis legit mendalam.",
+	"desc_en": "Two-layer wet cake: the bottom layer is savory dense black or white glutinous rice steamed with coconut milk, topped with a layer of palm sugar srikaya batter and beaten duck eggs, soft porous with deep sweet savory flavor."
+  },
+  {
+	"name": "Kue Ganjel Rel",
+	"price": 5000,
+	"origin": "Semarang, Jawa Tengah",
+	"desc_id": "Roti padat cokelat tua berbentuk balok panjang mirip bantalan rel kereta peninggalan era kolonial di Semarang. Terbuat dari terigu, gula jawa, dan mentega melimpah, bertekstur padat agak keras bertabur biji wijen putih penuh di permukaannya.",
+	"desc_en": "Dense dark brown bread shaped like a long block resembling a railroad tie, a legacy of the colonial era in Semarang. Made from flour, palm sugar, and abundant butter, with a rather hard dense texture, fully sprinkled with white sesame seeds on the surface."
+  },
+  {
+	"name": "Es Dawet Ayu",
+	"price": 5000,
+	"origin": "Banjarnegara, Jawa Tengah",
+	"desc_id": "Minuman es tradisional legendaris berisi cendol tepung beras hijau suji kenyal beraroma pandan wangi. Disajikan dalam siraman santan encer matang gurih dan kentalan saus gula aren murni yang direbus bersama buah nangka, menghasilkan aroma khas.",
+	"desc_en": "Legendary traditional iced drink containing chewy green suji pandan-scented rice flour cendol. Served in a drizzle of savory cooked diluted coconut milk and thick pure palm sugar sauce boiled with jackfruit pieces, producing a distinctive aroma."
+  },
+  {
+	"name": "Es Cendol Tepung",
+	"price": 5000,
+	"origin": "Bandung, Jawa Barat",
+	"desc_id": "Minuman penyegar populer berbahan butiran cendol kenyal dari tepung hunkwe atau sagu aren berwarna hijau daun suji. Disiram kuah santan dingin gurih dan sirup gula merah jawa kental encer di atas serutan es batu murni yang melimpah.",
+	"desc_en": "Popular refreshing drink made from chewy cendol grains from hunkwe or sago flour colored green with suji leaves. Drizzled with cold savory coconut milk sauce and thick diluted red palm sugar syrup over abundant pure ice shavings."
+  },
+  {
+	"name": "Es Selendang Mayang",
+	"price": 5000,
+	"origin": "Jakarta",
+	"desc_id": "Minuman es langka khas Betawi berisi potongan kue kenyal persegi lapis tiga warna dari tepung hunkwe (pati sagu tani). Disajikan dalam mangkok disiram kuah santan matang gurih, air gula merah encer, dan serutan es batu penyejuk dahaga.",
+	"desc_en": "Rare typical Betawi iced drink containing chewy three-colored layered square cake pieces from hunkwe flour (sago starch). Served in a bowl with savory cooked coconut milk drizzle, diluted red palm sugar water, and thirst-quenching ice shavings."
+  },
+  {
+	"name": "Es Sekemu",
+	"price": 5000,
+	"origin": "Banten",
+	"desc_id": "Minuman es tradisional Banten yang sangat menyegarkan beraroma khas buah sawo matang diiris tipis, dicampur kerokan kelapa muda segar, air kelapa muda manis, sirup gula pasir bening alami, dan es batu pemuas dahaga di siang terik.",
+	"desc_en": "Very refreshing traditional Banten iced drink with a distinctive aroma of ripe sawo fruit sliced thin, mixed with fresh young coconut scrapings, sweet young coconut water, natural clear sugar syrup, and ice cubes to quench thirst in the scorching midday heat."
+  },
+  {
+	"name": "Es Air Mata Pengantin",
+	"price": 5000,
+	"origin": "Riau",
+	"desc_id": "Minuman es khas pesta adat Riau berisi serutan agar-agar kenyal warna-warni pelangi berlapis, biji selasih hitam, sirup cocopandan, dan es batu melimpah. Dinamakan demikian karena melambangkan kebahagiaan air mata haru sepasang pengantin baru.",
+	"desc_en": "Iced drink typical of Riau traditional parties containing layered rainbow-colored chewy jelly shreds, black basil seeds, cocopandan syrup, and abundant ice cubes. Named thus because it symbolizes the happy tears of a newlywed couple."
+  },
+  {
+	"name": "Es Bir Pletok",
+	"price": 5000,
+	"origin": "Jakarta",
+	"desc_id": "Minuman herbal penyegar tanpa alkohol khas Betawi terbuat dari rebusan kayu secang merah, jahe emprit pedas, serai, kayu manis, dan cengkeh. Dikocok dalam tabung hingga berbusa mirip bir, disajikan dingin dengan es batu pereda lelah.",
+	"desc_en": "Non-alcoholic refreshing herbal drink typical of Betawi made from boiled red secang wood, spicy emprit ginger, lemongrass, cinnamon, and cloves. Shaken in a tube until foamy like beer, served cold with ice cubes to relieve fatigue."
+  },
+  {
+	"name": "Es Jagung",
+	"price": 5000,
+	"origin": "Gorontalo",
+	"desc_id": "Minuman es unik berbahan dasar pipilan jagung manis muda yang direbus matang bersama gula pasir and daun pandan hingga kental berkuah sari jagung. Disajikan dingin dalam gelas besar bersama kuah santan asin gurih dan serutan es batu murni.",
+	"desc_en": "Unique iced drink made from young sweet corn kernels boiled with sugar and pandan leaves until thick with corn extract broth. Served cold in a tall glass with savory salty coconut milk sauce and pure ice shavings."
+  },
+  {
+	"name": "Es Kolak Pisang Jawi",
+	"price": 5000,
+	"origin": "Jawa",
+	"desc_id": "Hidangan penutup takjil populer berisi potongan buah pisang kepok dan ubi jalar manis yang direbus dalam kuah santan kelapa beraroma gula kelapa tua karamel pekat dan daun pandan harum, disajikan dingin dengan es batu hancur.",
+	"desc_en": "Popular takjil dessert containing kepok banana and sweet potato pieces boiled in coconut milk broth flavored with thick old palm sugar caramel and fragrant pandan leaves, served cold with crushed ice."
+  },
+  {
+	"name": "Bajigur",
+	"price": 5000,
+	"origin": "Jawa Barat",
+	"desc_id": "Minuman hangat tradisional suku Sunda berbahan dasar seduhan santan kelapa encer matang, gula aren murni, bubuk kopi hitam asli sedikit, dan jahe geprek. Disajikan hangat di mangkok tanah liat bersama irisan daging kolang-kaling tipis rebus.",
+	"desc_en": "Traditional warm drink of the Sundanese tribe made from a brew of diluted cooked coconut milk, pure palm sugar, a little real black coffee powder, and crushed ginger. Served warm in a clay bowl with slices of boiled kolang-kaling."
+  },
+  {
+	"name": "Bandrek Susu Jahe",
+	"price": 5000,
+	"origin": "Jawa Barat",
+	"desc_id": "Minuman hangat berkhasiat tinggi khas priangan Sunda terbuat dari rebusan air jahe merah pedas pekat, gula pasir, kayu manis, dan cengkeh harum. Dicampur susu kental manis putih penuh untuk memberikan rasa hangat gurih pedas tubuh.",
+	"desc_en": "High-benefit warm drink typical of Sundanese Priangan made from boiled intensely spicy red ginger water, sugar, cinnamon, and fragrant cloves. Mixed with full white sweetened condensed milk to provide a warm savory spicy body sensation."
+  },
+  {
+	"name": "Wedang Uwuh",
+	"price": 5000,
+	"origin": "Imogiri, Yogyakarta",
+	"desc_id": "Sering disebut wedang sampah karena berisi campuran rempah kering utuh: daun kayu manis, daun cengkeh, daun pala, serutan kayu secang merah, jahe bakar geprek, dan gula batu. Disiram air mendidih menghasilkan rasa pedas manis rempah pekat.",
+	"desc_en": "Often called trash wedang because it contains a mix of whole dried spices: cinnamon leaves, clove leaves, nutmeg leaves, red secang wood shavings, roasted crushed ginger, and rock sugar. Poured with boiling water, producing an intensely spicy sweet spice taste."
+  },
+  {
+	"name": "Sekoteng",
+	"price": 5000,
+	"origin": "Jawa Tengah",
+	"desc_id": "Minuman jahe hangat malam hari berisi taburan kacang tanah sangrai garing tanpa kulit, potongan roti tawar dadu, biji delima sagu kenyal, dan kacang hijau rebus. Disiram kuah air jahe pedas manis pekat bercampur kental manis putih.",
+	"desc_en": "Warm ginger night drink containing a sprinkle of crispy skinned roasted peanuts, white bread cubes, chewy pomegranate sago pearls, and boiled mung beans. Drenched in intensely sweet spicy ginger water mixed with white condensed milk."
+  },
+  {
+	"name": "Wedang Cor",
+	"price": 5000,
+	"origin": "Jember, Jawa Timur",
+	"desc_id": "Minuman hangat unik khas Jember terbuat dari campuran seduhan wedang jahe emprit bakar pedas manis gula pasir yang dicampur dengan ketan hitam tape matang asam manis dan susu kental manis putih, menghasilkan warna abu-abu cor unik gurih.",
+	"desc_en": "Unique warm drink typical of Jember made from a mix of brewed roasted emprit ginger tea sweet with sugar, mixed with sweet-sour fermented black glutinous rice tape and white sweetened condensed milk, producing a unique gray swirly savory color."
+  },
+  {
+	"name": "Wedang Asle",
+	"price": 5000,
+	"origin": "Solo, Jawa Tengah",
+	"desc_id": "Minuman malam hari khas Solo berisi nasi ketan putih pulen kukus, potongan agar-agar putih tawar dadu, dan potongan roti tawar. Disiram dengan kuah santan kelapa murni encer yang dimasak panas bersama gula pasir dan sedikit garam gurih asin.",
+	"desc_en": "Nighttime drink typical of Solo containing soft steamed white glutinous rice, plain white jelly cubes, and bread pieces. Drizzled with pure diluted coconut milk cooked hot with sugar and a pinch of savory salt."
+  },
+  {
+	"name": "Wedang Tahu",
+	"price": 5000,
+	"origin": "Semarang, Jawa Tengah",
+	"desc_id": "Kudapan hangat peninggalan peranakan Tionghoa Semarang berisi kembang tahu sutera sangat lembut dari koagulasi susu kacang kedelai murni. Disajikan hangat dalam mangkok kecil disiram kuah air jahe pedas manis pekat gula tebu murni.",
+	"desc_en": "Warm snack legacy of Semarang Chinese Peranakan containing very soft silk tofu from coagulated pure soybean milk. Served warm in a small bowl drizzled with intensely sweet spicy pure sugarcane ginger water."
+  },
+  {
+	"name": "Es Teh Tarik",
+	"price": 5000,
+	"origin": "Aceh",
+	"desc_id": "Minuman dingin khas kedai kopi Melayu Aceh terbuat dari seduhan teh hitam pekat wangi aromatik yang dicampur susu kental manis putih. Dituangkan berulang kali dari satu ceret ke ceret lain dari jarak jauh hingga berbusa tebal dingin renyah.",
+	"desc_en": "Cold drink typical of Aceh Malay coffee shops made from strong fragrant black tea infusion mixed with white sweetened condensed milk. Poured repeatedly from one pot to another from a distance until thickly frothy and refreshingly cold."
+  },
+  {
+	"name": "Es Kopi Tubruk Susu",
+	"price": 5000,
+	"origin": "Jawa",
+	"desc_id": "Kopi hitam saring kasar tradisional Jawa yang diseduh air mendidih melimpah bersama gula pasir, lalu dicampur susu kental manis putih tebal di dasar gelas, diaduk rata dan disajikan dingin bersama balok es batu penyegar kantuk.",
+	"desc_en": "Traditional Javanese coarse-filtered black coffee brewed with abundant boiling water and sugar, then mixed with thick white condensed milk at the bottom of the glass, stirred well and served cold with ice cubes to relieve drowsiness."
+  },
+  {
+	"name": "Es Kelapa Jeruk Purut",
+	"price": 5000,
+	"origin": "Indonesia",
+	"desc_id": "Minuman penyegar dahaga pantai tropis berisi serutan daging kelapa muda, air kelapa muda manis, perasan jeruk nipis atau jeruk purut wangi segar aromatik, dan sirup gula pasir bening murni di atas bongkahan es batu hancur melimpah.",
+	"desc_en": "Tropical beach thirst-quenching drink containing scraped young coconut flesh, sweet young coconut water, squeezed lime or fragrant aromatic kaffir lime juice, and pure clear sugar syrup over abundant crushed ice chunks."
+  },
+  {
+	"name": "Wedang Kopi Jahe Bakar",
+	"price": 5000,
+	"origin": "Jawa Tengah",
+	"desc_id": "Seduhan kopi hitam pekat robusta khas Jawa yang dimasak mendidih bersama remukan jahe emprit bakar geprek pedas dan gula jawa merah murni asli, menyajikan kombinasi rasa pahit kopi, pedas jahe, dan manis legit aren hangat tubuh.",
+	"desc_en": "Brew of strong typical Javanese Robusta black coffee boiled with crushed roasted spicy emprit ginger pieces and pure red palm sugar, presenting a combination of bitter coffee, spicy ginger, and sweet savory palm sugar that warms the body."
+  },
+  {
+	"name": "Es Cincau Hijau",
+	"price": 5000,
+	"origin": "Jawa Barat",
+	"desc_id": "Es cincau hijau adalah minuman tradisional yang sangat menyegarkan. Terbuat dari daun cincau alami yang diolah menjadi jeli kenyal. Disajikan dengan santan gurih, sirup gula aren, dan es serut, minuman ini sangat cocok untuk melepas dahaga serta menyejukkan perut di cuaca panas. Rasanya yang lembut menjadikannya favorit semua kalangan.",
+	"desc_en": "Green grass jelly is a very refreshing traditional drink made from natural grass jelly leaves processed into chewy jelly. Served with savory coconut milk, palm sugar syrup, and shaved ice, this drink is perfect for quenching thirst and cooling the stomach in hot weather. Its soft texture makes it a favorite among all ages."
+  },
+  {
+	"name": "Bingka Kentang",
+	"price": 6000,
+	"origin": "Banjarmasin, Kalimantan Selatan",
+	"desc_id": "Kue basah premium khas Banjar yang dipanggang menggunakan cetakan berbentuk bunga helai enam. Adonannya menggunakan kentang tumbuk halus, telur bebek, santan kental murni, dan gula pasir, menghasilkan rasa legit basah lemak berminyak.",
+	"desc_en": "Premium wet cake typical of Banjar baked using a six-petal flower-shaped mold. The batter uses mashed potatoes, duck eggs, pure thick coconut milk, and sugar, producing a moist savory oily sweet taste."
+  },
+  {
+	"name": "Kue Meuseukat",
+	"price": 6000,
+	"origin": "Aceh",
+	"desc_id": "Dodol premium khas Aceh berwarna kuning gading mengkilap terbuat dari tepung terigu, gula pasir murni, mentega, dan campuran sari buah nanas segar melimpah. Memiliki tekstur yang sangat elastis lengket dengan rasa manis asam nanas alami wangi.",
+	"desc_en": "Premium glossy ivory-colored dodol typical of Aceh made from wheat flour, pure sugar, butter, and a mix of abundant fresh pineapple juice. Has a very elastic sticky texture with a natural sweet-sour pineapple taste and fragrant aroma."
+  },
+  {
+	"name": "Es Doger",
+	"price": 6000,
+	"origin": "Cirebon, Jawa Barat",
+	"desc_id": "Es serut manis berwarna merah muda aromatik sirup cocopandan, dicampur serutan kelapa muda, ketan hitam manis, potongan roti tawar dadu, dan pacar cina kenyal. Disiram kental manis putih melimpah di atasnya sebagai pelengkap.",
+	"desc_en": "Sweet shaved ice pink with aromatic cocopandan syrup, mixed with scraped young coconut, sweet black glutinous rice, white bread cubes, and chewy pacar cina. Drizzled with abundant white condensed milk on top as a complement."
+  },
+  {
+	"name": "Es Oyen",
+	"price": 6000,
+	"origin": "Bandung, Jawa Barat",
+	"desc_id": "Es campur khas Bandung dengan isian utama potongan buah kolang-kaling rebus merah, alpukat, nangka, pacar cina kenyal, dan serutan kelapa muda. Disiram dengan racikan sirup gula pasir bening murni khas tradisional dan kental manis putih.",
+	"desc_en": "Mixed ice typical of Bandung with main ingredients of boiled red kolang-kaling pieces, avocado, jackfruit, chewy pacar cina, and scraped young coconut. Drizzled with a mix of pure traditional clear sugar syrup and white condensed milk."
+  },
+  {
+	"name": "Es Laksamana Mengamuk",
+	"price": 6000,
+	"origin": "Riau",
+	"desc_id": "Minuman es segar khas Melayu Riau berbahan utama potongan dadu daging buah kweni wangi matang pohon yang asam manis. Dicampur ke dalam kuah santan kelapa encer matang manis gula pasir murni, selasih, dan serutan es batu dingin menyegarkan.",
+	"desc_en": "Fresh iced drink typical of Riau Malays made from cubed pieces of ripe fragrant tree-ripened kweni fruit that is sweet-sour. Mixed into a broth of diluted cooked coconut milk sweetened with pure sugar, basil seeds, and refreshing cold ice shavings."
+  },
+  {
+	"name": "Es Tebak",
+	"price": 6000,
+	"origin": "Padang, Sumatera Barat",
+	"desc_id": "Es campur khas Minang berisi tebak (olahan tepung beras berbentuk mie pendek keras putih kenyal mirip cendol), cincau hitam dadu, tapai ketan hitam manis, dan kolang-kaling. Disiram kuah santan, sirup merah murni, dan kental manis pekat.",
+	"desc_en": "Mixed ice typical of Minang containing tebak (rice flour processed into short hard white chewy noodles similar to cendol), cubed black jelly, sweet black glutinous rice tape, and kolang-kaling. Drizzled with coconut milk sauce, pure red syrup, and thick condensed milk."
+  },
+  {
+	"name": "Es Koteng",
+	"price": 6000,
+	"origin": "Medan, Sumatera Utara",
+	"desc_id": "Minuman es menyegarkan peninggalan peranakan Tionghoa Medan berisi biji teratai rebus empuk, buah kaleng kelengkeng, jamur es transparan kenyal, kolang-kaling, dan jelai bubur, disiram sirup gula batu bening encer dingin menyegarkan tubuh.",
+	"desc_en": "Refreshing iced drink legacy of Medan Chinese Peranakan containing soft boiled lotus seeds, canned longan fruit, transparent chewy snow fungus, kolang-kaling, and barley porridge, drizzled with diluted clear rock sugar syrup refreshingly cold."
+  },
+  {
+	"name": "Es Nona",
+	"price": 6000,
+	"origin": "Pontianak, Kalimantan Barat",
+	"desc_id": "Minuman es manis legendaris khas Pontianak berisi manisan buah pepaya parut garing, tapai singkong manis, pacar cina merah kenyal, dan kacang merah. Ditutup dengan es serut halus bersiram sirup merah jambu murni dan kental manis kelapa.",
+	"desc_en": "Legendary sweet iced drink typical of Pontianak containing crispy grated papaya preserve, sweet cassava tape, chewy red pacar cina, and red beans. Topped with fine shaved ice drizzled with pure pink syrup and coconut condensed milk."
+  },
+  {
+	"name": "Wedang Ronde Jahe",
+	"price": 6000,
+	"origin": "Jawa Tengah",
+	"desc_id": "Minuman hangat berisi bola-bola ketan kenyal besar berisi pasta tumbukan kacang tanah gurih manis dan bola ketan kecil polos tanpa isi. Disajikan dalam mangkok kecil disiram kuah air jahe emprit pedas manis gula tebu murni hangat.",
+	"desc_en": "Warm drink containing large chewy glutinous rice balls filled with savory sweet mashed peanut paste and small plain unfilled glutinous rice balls. Served in a small bowl drizzled with intensely sweet spicy emprit ginger water made with pure sugarcane sugar."
+  },
+  {
+	"name": "Angsle",
+	"price": 6000,
+	"origin": "Malang, Jawa Timur",
+	"desc_id": "Minuman hangat khas Malang mirip sekoteng berisi putu mayang mini, ketan putih kukus, kacang hijau rebus, potongan roti tawar dadu, dan kolang-kaling. Disiram kuah santan kental panas beraroma jahe tipis dan vanili manis harum legas.",
+	"desc_en": "Warm drink typical of Malang similar to sekoteng containing mini putu mayang, steamed white glutinous rice, boiled mung beans, white bread cubes, and kolang-kaling. Drizzled with thick hot coconut milk broth with a hint of ginger and sweet fragrant vanilla."
+  },
+  {
+	"name": "Es Pallu Butung",
+	"price": 7000,
+	"origin": "Makassar, Sulawesi Selatan",
+	"desc_id": "Minuman dingin tradisional Sulawesi Selatan yang mirip es pisang ijo, namun potongan pisang raja matang direbus polos tanpa balutan kulit tepung hijau. Disajikan bersama bubur sagu atau tepung beras putih, sirup merah, dan serutan es batu.",
+	"desc_en": "Traditional cold drink of South Sulawesi similar to es pisang ijo, but the ripe banana pieces are boiled plain without a green flour skin wrap. Served with sago or white rice flour porridge, red syrup, and ice shavings."
+  },
+  {
+	"name": "Es Kacang Merah",
+	"price": 7000,
+	"origin": "Palembang, Sumatera Selatan",
+	"desc_id": "Minuman es khas Palembang berisi kacang merah buncis yang direbus lama bersama gula merah dan kayu manis hingga empuk padat manis manis. Disajikan dalam mangkok dengan gunungan es serut melimpah, kuah santan gurih, dan sirup cokelat pekat.",
+	"desc_en": "Iced drink typical of Palembang containing red kidney beans boiled long with palm sugar and cinnamon until soft, dense, and sweet. Served in a bowl with a mountain of abundant shaved ice, savory coconut milk sauce, and thick chocolate syrup."
+  },
+  {
+	"name": "Es Goyobod",
+	"price": 7000,
+	"origin": "Bandung, Jawa Barat",
+	"desc_id": "Es goyobod adalah minuman khas Jawa Barat yang kaya tekstur. Isinya terdiri dari potongan hunkwe, alpukat, kelapa muda, dan kolang-kaling. Disiram santan kental serta sirup merah manis, perpaduan rasa gurih dan dinginnya sangat nikmat. Minuman ini adalah pilihan sempurna untuk melegakan tenggorokan saat Anda merasa haus di tengah cuaca panas terik.",
+	"desc_en": "Es goyobod is a drink typical of West Java rich in texture. Its contents consist of hunkwe pieces, avocado, young coconut, and kolang-kaling. Drizzled with thick coconut milk and sweet red syrup, the combination of savory and cold flavors is very delicious. This drink is the perfect choice to relieve your throat when you feel thirsty in the scorching hot weather."
+  },
+  {
+	"name": "Bika Ambon",
+	"price": 8000,
+	"origin": "Medan, Sumatera Utara",
+	"desc_id": "Kue panggang premium bertekstur kenyal spongi yang terkenal dengan serat lubang sarang lebah yang merata dari bawah ke atas. Aromanya sangat harum berkat penggunaan serai, daun jeruk purut, telur melimpah, dan santan berfermentasi ragi alami, bercita rasa manis dan legit.",
+	"desc_en": "Premium baked cake with a chewy spongy texture, famous for its evenly distributed honeycomb fibers from bottom to top. Very fragrant thanks to the use of lemongrass, kaffir lime leaves, abundant eggs, and naturally fermented coconut milk, with a sweet and savory taste."
+  },
+  {
+	"name": "Es Teler Alpukat",
+	"price": 8000,
+	"origin": "Jakarta",
+	"desc_id": "Minuman es buah legendaris berisi kombinasi potongan daging buah alpukat mentega, nangka wangi matang, dan kerokan kelapa muda segar. Disajikan dalam mangkok berisi serutan es batu melimpah yang diguyur sirup gula pasir encer dan kental manis.",
+	"desc_en": "Legendary fruit ice drink containing a combination of butter avocado flesh pieces, fragrant ripe jackfruit, and fresh young coconut scrapings. Served in a bowl with abundant ice shavings drizzled with diluted sugar syrup and condensed milk."
+  },
+  {
+	"name": "Es Pisang Ijo",
+	"price": 8000,
+	"origin": "Makassar, Sulawesi Selatan",
+	"desc_id": "Kudapan es khas Makassar berisi buah pisang raja matang utuh yang dibalut adonan tepung terigu kenyal berwarna hijau daun suji. Disajikan di atas bubur sumsum putih lembut gurih, es batu serut, sirup merah DHT aromatik pisang ambon, dan susu.",
+	"desc_en": "Ice dessert typical of Makassar containing whole ripe Raja bananas wrapped in chewy green suji-colored wheat flour batter. Served on a bed of soft savory white porridge, shaved ice, aromatic DHT pisang ambon red syrup, and milk."
+  },
+  {
+	"name": "Roti Buaya Mini",
+	"price": 10000,
+	"origin": "Jakarta",
+	"desc_id": "Roti manis tradisional Betawi bertekstur padat yang dibentuk menyerupai replika seekor buaya sebagai simbol kesetiaan dalam pernikahan adat. Memiliki rasa manis susu polos tradisional dengan kulit luar mengkilap kuning kecokelatan emas.",
+	"desc_en": "Traditional Betawi sweet bread with a dense texture shaped like a crocodile replica as a symbol of fidelity in traditional weddings. Has a plain sweet milk taste with a glossy golden yellow brown outer skin."
+  },
+  {
+	"name": "Lumpia Rebung",
+	"price": 12000,
+	"origin": "Semarang, Jawa Tengah",
+	"desc_id": "Lumpia legendaris berisi tumisan rebung muda manis gurih bebas bau renyah, udang rebon, dan telur orak-arik. Dibungkus kulit pastry tipis yang digoreng garing kecokelatan, disajikan bersama acar lokio, cabai rawit hijau, dan saus bawang kental manis khas peranakan.",
+	"desc_en": "Legendary spring roll filled with savory sweet young bamboo shoot stir-fry free of musty smell, crispy rebon shrimp, and scrambled egg. Wrapped in thin pastry skin fried golden crispy, served with lokio pickles, green bird's eye chili, and thick sweet onion sauce typical of Peranakan."
+  },
+  {
+	"name": "Kue Maksuba",
+	"price": 12000,
+	"origin": "Palembang, Sumatera Selatan",
+	"desc_id": "Kue basah lapis khas Palembang peninggalan kesultanan, berbahan utama puluhan butir telur bebek dan kental manis tanpa tepung terigu sama sekali. Dipanggang selapis demi selapis menghasilkan tekstur kenyal basah padat dan manis legit yang ekstrem.",
+	"desc_en": "Layered wet cake typical of Palembang from the sultanate era, made from dozens of duck eggs and condensed milk with absolutely no wheat flour. Baked layer by layer producing an extremely chewy moist dense and intensely sweet savory texture."
+  },
+  {
+	"name": "Es Kopyor",
+	"price": 12000,
+	"origin": "Pati, Jawa Tengah",
+	"desc_id": "Minuman es premium menggunakan daging kelapa kopyor alami (kelapa mutasi genetik bertekstur hancur empuk gurih). Disajikan secara sederhana bersama air kelapa muda murni asli, sirup cocopandan merah wangi harum, dan serutan es batu murni.",
+	"desc_en": "Premium iced drink using natural kopyor coconut (genetic mutation coconut with crumbly soft savory texture). Served simply with real pure young coconut water, fragrant red cocopandan syrup, and pure ice shavings."
+  },
+  {
+	"name": "Kue Lapis Legit Spekoek",
+	"price": 15000,
+	"origin": "Jakarta",
+	"desc_id": "Kue premium legendaris dengan puluhan lapisan tipis bertekstur lembut yang dipanggang satu per satu secara sabar. Resepnya kaya akan kuning telur dan mentega berkualitas tinggi, dipadu dengan bumbu spekoek aroma rempah wanyi kayu manis, cengkeh, dan kapulaga yang kuat khas kuliner peninggalan era kolonial.",
+	"desc_en": "Legendary premium cake with dozens of thin soft layers patiently baked one by one. The recipe is rich in egg yolks and high-quality butter, combined with spekoek spice blend of fragrant cinnamon, cloves, and cardamom, a strong colonial-era culinary legacy."
+  },
+  {
+	"name": "Klappertaart Panggang",
+	"price": 15000,
+	"origin": "Manado, Sulawesi Utara",
+	"desc_id": "Kue basah khas Manado adaptasi kuliner Belanda berbahan dasar kelapa muda, susu cair, mentega, kuning telur, dan tepung. Dipanggang dengan taburan bubuk kayu manis, kismis, kacang kenari, dan balutan putih telur kocok kaku di atas permukaannya.",
+	"desc_en": "Wet cake typical of Manado adapted from Dutch cuisine, made from young coconut, liquid milk, butter, egg yolks, and flour. Baked with a sprinkle of cinnamon powder, raisins, walnuts, and a coating of stiff beaten egg white on top."
+  },
+  {
+	"name": "Kue Pia Legong",
+	"price": 15000,
+	"origin": "Kuta, Bali",
+	"desc_id": "Pastry panggang premium khas Bali berkulit renyah berlapis-lapis tipis (flaky pastry). Bagian dalam diisi padat dengan pasta kacang hijau manis tradisional, keju parut gurih, atau cokelat meses pekat, dipanggang kuning keemasan sempurna.",
+	"desc_en": "Premium baked pastry typical of Bali with a crispy thin layered flaky pastry skin. The inside is densely filled with traditional sweet mung bean paste, savory grated cheese, or thick chocolate sprinkles, baked perfectly golden yellow."
+  }
+]

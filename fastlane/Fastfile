@@ -1,0 +1,80 @@
+default_platform(:ios)
+
+platform :ios do
+  desc "Create certificates and provisioning profiles"
+  lane :init_certificates do
+    api_key = app_store_connect_api_key(
+      key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
+      issuer_id: ENV["APP_STORE_CONNECT_API_ISSUER_ID"],
+      key_content: ENV["APP_STORE_CONNECT_API_KEY_KEY"],
+      is_key_content_base64: true
+    )
+
+    cert(
+      api_key: api_key,
+      output_path: "build/certs"
+    )
+
+    sigh(
+      api_key: api_key,
+      app_identifier: "com.japastycoon",
+      output_path: "build/profiles",
+      force: true
+    )
+  end
+
+  desc "Fetch certificates and provisioning profiles"
+  lane :fetch_certificates do
+    api_key = app_store_connect_api_key(
+      key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
+      issuer_id: ENV["APP_STORE_CONNECT_API_ISSUER_ID"],
+      key_content: ENV["APP_STORE_CONNECT_API_KEY_KEY"],
+      is_key_content_base64: true
+    )
+
+    cert(
+      api_key: api_key,
+      output_path: "build/certs"
+    )
+
+    sigh(
+      api_key: api_key,
+      app_identifier: "com.japastycoon",
+      output_path: "build/profiles",
+      readonly: true
+    )
+  end
+
+  desc "Automated pipeline to fetch certificates, build the Xcode project, and publish to TestFlight"
+  lane :deploy_testflight do
+    api_key = app_store_connect_api_key(
+      key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
+      issuer_id: ENV["APP_STORE_CONNECT_API_ISSUER_ID"],
+      key_content: ENV["APP_STORE_CONNECT_API_KEY_KEY"],
+      is_key_content_base64: true
+    )
+
+    sigh(
+      api_key: api_key,
+      app_identifier: "com.japastycoon",
+      output_path: "build/profiles",
+      force: true,
+      provisioning_name: "JapasTycoon AppStore"
+    )
+
+    gym(
+      project: "build/ios/JapasTycoon.xcodeproj",
+      scheme: "JapasTycoon",
+      output_directory: "build/ios",
+      output_name: "JapasTycoon.ipa",
+      export_method: "app-store",
+      xcargs: "CODE_SIGN_STYLE=Manual CODE_SIGN_IDENTITY='Apple Distribution' DEVELOPMENT_TEAM=2284W9HK58 PROVISIONING_PROFILE_SPECIFIER='JapasTycoon AppStore'"
+    )
+
+    pilot(
+      ipa: "build/ios/JapasTycoon.ipa",
+      api_key: api_key,
+      skip_waiting_for_build_processing: true
+    )
+  end
+end

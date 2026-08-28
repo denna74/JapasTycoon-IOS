@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://btawog1fxcwfv"]
+
+[ext_resource type="Script" uid="uid://d108ijd7t2wpq" path="res://scenes/hud/ResultPopup.gd" id="1_esq31"]
+
+[node name="ResultPopup" type="Panel" unique_id=110472040]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_esq31")
+
+[node name="TitleLabel" type="Label" parent="." unique_id=1747959849]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 25.0
+offset_right = 260.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StarContainer" type="HBoxContainer" parent="." unique_id=980180038]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 68.0
+offset_right = 240.0
+offset_bottom = 100.0
+alignment = 1
+
+[node name="InfoLabel" type="Label" parent="." unique_id=1122567550]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 105.0
+offset_right = 260.0
+offset_bottom = 135.0
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RetryButton" type="Button" parent="." unique_id=2102644439]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 155.0
+offset_right = 150.0
+offset_bottom = 205.0
+flat = true
+expand_icon = true
+
+[node name="NextButton" type="Button" parent="." unique_id=1638557070]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 155.0
+offset_right = 285.0
+offset_bottom = 205.0
+flat = true
+expand_icon = true
+
+[node name="ExitButton" type="Button" parent="." unique_id=864948648]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 215.0
+offset_right = 230.0
+offset_bottom = 270.0
+flat = true
+expand_icon = true

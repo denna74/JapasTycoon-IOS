@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://c2y7hcr2u5nau"]
+
+[ext_resource type="Script" uid="uid://i7u161h13iot" path="res://scenes/main/Main.gd" id="1_b4t2f"]
+[ext_resource type="Texture2D" uid="uid://dcgdtgidgjjwf" path="res://assets/gameplay_bg.png" id="1_bg"]
+[ext_resource type="PackedScene" uid="uid://dwwessqtm6kr2" path="res://scenes/hud/Header.tscn" id="2_16i3s"]
+[ext_resource type="PackedScene" uid="uid://dkx7cjw0nwd7e" path="res://scenes/customer/CustomerArea.tscn" id="3_gafmr"]
+[ext_resource type="PackedScene" uid="uid://c2t0q3prntnms" path="res://scenes/puzzle/PuzzleGrid.tscn" id="4_mhf2r"]
+[ext_resource type="PackedScene" uid="uid://dm21bnqbt5gaj" path="res://scenes/skills/SkillBar.tscn" id="5_h2m4i"]
+[ext_resource type="PackedScene" uid="uid://btawog1fxcwfv" path="res://scenes/hud/ResultPopup.tscn" id="6_j1vwl"]
+[ext_resource type="AudioStream" uid="uid://bapm0fmmk8vrq" path="res://assets/bgm/play_the_game.mp3" id="7_bgm"]
+
+[node name="Main" type="Control" unique_id=845177346]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b4t2f")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1951296987]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("1_bg")
+expand_mode = 1
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="." unique_id=627538633]
+stream = ExtResource("7_bgm")
+autoplay = true
+
+[node name="Header" parent="." unique_id=537491849 instance=ExtResource("2_16i3s")]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+
+[node name="CustomerArea" parent="." unique_id=553307548 instance=ExtResource("3_gafmr")]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 50.0
+offset_right = 0.0
+offset_bottom = 170.0
+grow_horizontal = 2
+
+[node name="PuzzleGrid" parent="." unique_id=983330723 instance=ExtResource("4_mhf2r")]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 180.0
+offset_right = 480.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SkillBar" parent="." unique_id=1930124338 instance=ExtResource("5_h2m4i")]
+offset_top = 794.0
+offset_right = 480.0
+offset_bottom = 854.0
+
+[node name="ResultPopup" parent="." unique_id=1050367635 instance=ExtResource("6_j1vwl")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -100.0
+offset_right = 150.0
+offset_bottom = 180.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="CancelSkillBtn" type="TextureButton" parent="." unique_id=820093288]
+visible = false
+layout_mode = 0
+offset_left = 177.0
+offset_top = 86.0
+offset_right = 302.0
+offset_bottom = 154.0
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="PausePopup" type="Panel" parent="." unique_id=764096282]
+visible = false
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -110.0
+offset_right = 150.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseDesc" type="Label" parent="PausePopup" unique_id=2087113362]
+layout_mode = 0
+anchor_right = 1.0
+offset_left = 10.0
+offset_top = 55.0
+offset_right = -10.0
+offset_bottom = 125.0
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ContinueButton" type="Button" parent="PausePopup" unique_id=51873995]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 150.0
+offset_right = 290.0
+offset_bottom = 200.0
+flat = true
+expand_icon = true
+
+[node name="ExitButton" type="Button" parent="PausePopup" unique_id=2051768094]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 150.0
+offset_right = 165.0
+offset_bottom = 200.0
+flat = true
+expand_icon = true

@@ -1,0 +1,25 @@
+# Godot editor & cache
+.godot/
+
+# Import & UID cache
+*.import
+*.uid
+
+# Build output
+build/
+
+# Fastlane
+vendor/
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Ruby
+Gemfile.lock
+
+# macOS
+.DS_Store
+
+# Opencode superpowers
+.superpowers/

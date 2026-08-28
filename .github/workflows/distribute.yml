@@ -1,0 +1,85 @@
+name: Distribute to TestFlight
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  export-and-build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+
+      - name: Install Fastlane
+        run: gem install fastlane
+
+      - name: Cache Godot Editor & Templates
+        id: cache-godot
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/Library/Application Support/Godot/
+            /usr/local/bin/godot
+          key: ${{ runner.os }}-godot-v4.6
+
+      - name: Setup Godot Engine
+        if: steps.cache-godot.outputs.cache-hit != 'true'
+        run: |
+          curl -LO https://github.com/godotengine/godot/releases/download/4.6-stable/Godot_v4.6-stable_macos.universal.zip
+          unzip Godot_v4.6-stable_macos.universal.zip
+          mv Godot.app /Applications/
+          ln -s /Applications/Godot.app/Contents/MacOS/Godot /usr/local/bin/godot
+          mkdir -p ~/Library/Application\ Support/Godot/export_templates/4.6.stable
+          curl -LO https://github.com/godotengine/godot/releases/download/4.6-stable/Godot_v4.6-stable_export_templates.tpz
+          unzip Godot_v4.6-stable_export_templates.tpz -d /tmp/templates
+          mv /tmp/templates/templates/* ~/Library/Application\ Support/Godot/export_templates/4.6.stable/
+          rm -rf /tmp/templates Godot_v4.6-stable_export_templates.tpz
+
+      - name: Import Code Signing Certificate
+        env:
+          BUILD_CERTIFICATE_P12: ${{ secrets.BUILD_CERTIFICATE_P12 }}
+        run: |
+          CERTIFICATE_PATH=$RUNNER_TEMP/build_certificate.p12
+          KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
+          KEYCHAIN_PASSWORD=$(openssl rand -base64 32)
+
+          echo -n "$BUILD_CERTIFICATE_P12" | base64 --decode -o $CERTIFICATE_PATH
+
+          security create-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
+          security set-keychain-settings -lut 21600 $KEYCHAIN_PATH
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
+
+          security import $CERTIFICATE_PATH -P "" -A -t cert -f pkcs12 -k $KEYCHAIN_PATH
+          security set-key-partition-list -S apple-tool:,apple: -k "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
+          security list-keychain -d user -s $KEYCHAIN_PATH
+
+      - name: Export Xcode Project
+        run: |
+          mkdir -p build/ios
+          godot --headless --import
+          godot --headless --export-release "iOS" build/ios/JapasTycoon.xcodeproj
+
+      - name: Run Fastlane Pipeline
+        run: fastlane ios deploy_testflight
+        env:
+          APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
+          APP_STORE_CONNECT_API_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_API_ISSUER_ID }}
+          APP_STORE_CONNECT_API_KEY_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY_KEY }}
+
+      - name: Upload IPA Artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: JapasTycoon-ipa
+          path: build/ios/*.ipa
+          retention-days: 30

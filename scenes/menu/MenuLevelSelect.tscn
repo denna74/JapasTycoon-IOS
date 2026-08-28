@@ -1,0 +1,145 @@
+[gd_scene format=3 uid="uid://c6dtlq3c4e7q2"]
+
+[ext_resource type="Script" uid="uid://7a6g8hg126nq" path="res://scenes/menu/MenuLevelSelect.gd" id="1_abcde"]
+[ext_resource type="AudioStream" uid="uid://c548rngbh1ao0" path="res://assets/bgm/snack_market.mp3" id="2_bgm"]
+[ext_resource type="Texture2D" uid="uid://dkjpv1bgna2ye" path="res://assets/main_background.png" id="3_bg"]
+[ext_resource type="Texture2D" uid="uid://cg47rmia4m7vp" path="res://assets/icons_buttons/setting_small.png" id="10_gear"]
+
+[node name="MenuLevelSelect" type="Control" unique_id=1069183875]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 480.0
+offset_bottom = 854.0
+script = ExtResource("1_abcde")
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="." unique_id=1782387465]
+stream = ExtResource("2_bgm")
+autoplay = true
+
+[node name="Background" type="TextureRect" parent="." unique_id=1140060809]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_bg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MainMenuView" type="Control" parent="." unique_id=1301758028]
+anchors_preset = 0
+offset_right = 480.0
+offset_bottom = 854.0
+
+[node name="SettingsButton" type="Button" parent="MainMenuView" unique_id=1581867326]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 12.0
+offset_right = 470.0
+offset_bottom = 44.0
+icon = ExtResource("10_gear")
+expand_icon = true
+
+[node name="Logo" type="TextureRect" parent="MainMenuView" unique_id=1909702749]
+custom_minimum_size = Vector2(280, 280)
+layout_mode = 0
+offset_left = 100.0
+offset_top = 80.0
+offset_right = 380.0
+offset_bottom = 360.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PlayButton" type="TextureButton" parent="MainMenuView" unique_id=954194276]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 400.0
+offset_right = 315.0
+offset_bottom = 485.0
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ExitButton" type="TextureButton" parent="MainMenuView" unique_id=404514611]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 510.0
+offset_right = 315.0
+offset_bottom = 595.0
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ExplanationBg" type="ColorRect" parent="MainMenuView" unique_id=1835713607]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 703.0
+offset_right = 470.0
+offset_bottom = 843.0
+color = Color(0, 0, 0, 0.5)
+
+[node name="ExplanationLabel" type="Label" parent="MainMenuView" unique_id=1770306950]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 730.0
+offset_right = 460.0
+offset_bottom = 870.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "Match the tiles to serve customers and grow your business!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="LevelTrackView" type="Control" parent="." unique_id=136236755]
+visible = false
+anchors_preset = 0
+offset_right = 480.0
+offset_bottom = 854.0
+
+[node name="UserInfoBar" type="Control" parent="LevelTrackView" unique_id=1495757771]
+anchors_preset = 0
+offset_right = 480.0
+offset_bottom = 100.0
+
+[node name="InfoBg" type="ColorRect" parent="LevelTrackView/UserInfoBar" unique_id=1093986729]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.5)
+
+[node name="LevelScroll" type="ScrollContainer" parent="LevelTrackView" unique_id=131925667]
+layout_mode = 0
+offset_top = 115.0
+offset_right = 480.0
+offset_bottom = 640.0
+horizontal_scroll_mode = 0
+
+[node name="LevelGrid" type="VBoxContainer" parent="LevelTrackView/LevelScroll" unique_id=1928327244]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="SkillsBar" type="Control" parent="LevelTrackView" unique_id=109175267]
+anchors_preset = 0
+offset_top = 650.0
+offset_right = 480.0
+offset_bottom = 780.0
+
+[node name="SkillsBg" type="TextureRect" parent="LevelTrackView/SkillsBar" unique_id=2074323986]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SkillContainer" type="Control" parent="LevelTrackView/SkillsBar" unique_id=720441743]
+anchors_preset = 0
+offset_right = 480.0
+offset_bottom = 110.0
+
+[node name="MainMenuBack" type="TextureButton" parent="LevelTrackView" unique_id=1279235073]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 787.0
+offset_right = 315.0
+offset_bottom = 841.0
+ignore_texture_size = true
+stretch_mode = 5
