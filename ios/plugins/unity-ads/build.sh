@@ -95,8 +95,8 @@ assert fw_marker in text, "CXXFLAGS marker not found"
 text = text.replace(
     fw_marker,
     fw_marker
-    + "\nenv.Append(CCFLAGS=['-F', '%s'])" % framework_parent
-    + "\nenv.Append(LINKFLAGS=['-F', '%s', '-framework', 'UnityAds'])" % framework_parent
+    + "\n    env.Append(CCFLAGS=['-F', '%s'])" % framework_parent
+    + "\n    env.Append(LINKFLAGS=['-F', '%s', '-framework', 'UnityAds'])" % framework_parent
 )
 with open("SConstruct", "w") as f:
     f.write(text)
