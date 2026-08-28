@@ -63,7 +63,17 @@ jobs:
           security set-key-partition-list -S apple-tool:,apple: -k "$KEYCHAIN_PASSWORD" $KEYCHAIN_PATH
           security list-keychain -d user -s $KEYCHAIN_PATH
 
-      - name: Build Unity Ads iOS Plugin
+      - name: Cache Unity Ads iOS Plugin
+        id: cache-unity-ads
+        uses: actions/cache@v4
+        with:
+          path: |
+            ios/plugins/unity-ads/bin/
+            ios/plugins/unity-ads/vendor/
+          key: ${{ runner.os }}-unity-ads-4.18.1-${{ hashFiles('ios/plugins/unity-ads/build.sh', 'ios/plugins/unity-ads/src/**', 'ios/plugins/unity-ads/unity-ads.gdip') }}
+
+      - name: Compile Unity Ads iOS Plugin
+        if: steps.cache-unity-ads.outputs.cache-hit != 'true'
         run: |
           brew install scons
           ./ios/plugins/unity-ads/build.sh

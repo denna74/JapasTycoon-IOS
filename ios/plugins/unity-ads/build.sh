@@ -109,11 +109,11 @@ echo "==> Compiling bridge (arm64 device + arm64 simulator)"
 # Clang's module.modulemap, and GCC doesn't recognize -F, so under GCC the
 # `#import <UnityAds/UnityAds.h>` lookup fails with "file not found".
 # version=4.0 is the generic Godot 4.x flag set used by the harness for all 4.x.
-scons use_llvm=yes target=release_debug arch=arm64 plugin=$PLUGIN_NAME version=4.0
-scons use_llvm=yes target=release_debug arch=arm64 simulator=yes plugin=$PLUGIN_NAME version=4.0
+scons use_llvm=yes target=release arch=arm64 plugin=$PLUGIN_NAME version=4.0
+scons use_llvm=yes target=release arch=arm64 simulator=yes plugin=$PLUGIN_NAME version=4.0
 
-DEVICE_LIB="./bin/lib$PLUGIN_NAME.arm64-ios.release_debug.a"
-SIM_LIB="./bin/lib$PLUGIN_NAME.arm64-simulator.release_debug.a"
+DEVICE_LIB="./bin/lib$PLUGIN_NAME.arm64-ios.release.a"
+SIM_LIB="./bin/lib$PLUGIN_NAME.arm64-simulator.release.a"
 
 xcodebuild -create-xcframework \
     -library "$DEVICE_LIB" \
