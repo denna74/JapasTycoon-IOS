@@ -86,20 +86,26 @@ with open("SConstruct") as f:
 marker = "['', 'apn', 'arkit', 'camera', 'icloud', 'gamecenter', 'inappstore', 'photo_picker']"
 assert marker in text, "SConstruct plugin list marker not found"
 text = text.replace(marker, "['', 'apn', 'arkit', 'camera', 'icloud', 'gamecenter', 'inappstore', 'photo_picker', '%s']" % name)
-# Add the Unity Ads framework headers to the include path so the bridge can
-# `#import <UnityAds/UnityAds.h>`.
-cpppath_marker = "'godot/platform/ios',"
-uads_inc = "    '" + script_dir + "/vendor/UnityAds.xcframework/ios-arm64/UnityAds.framework/Headers',"
-assert cpppath_marker in text, "CPPPATH marker not found"
-text = text.replace(cpppath_marker, cpppath_marker + "\n" + uads_inc)
+# Unity Ads is a framework (has a module map); with -fmodules it is only found
+# via the framework search path. Add -F pointing at the framework's parent so
+# `#import <UnityAds/UnityAds.h>` and `UnityAds-Swift.h` resolve as modules.
+framework_parent = script_dir + "/vendor/UnityAds.xcframework/ios-arm64"
+fw_marker = "env.Append(CCFLAGS=['-DVULKAN_ENABLED', '-std=gnu++17'])"
+assert fw_marker in text, "CCFLAGS marker not found"
+text = text.replace(fw_marker, fw_marker + "\nenv.Append(CCFLAGS=['-F', '%s'])" % framework_parent)
 with open("SConstruct", "w") as f:
     f.write(text)
 PYEOF
 
 echo "==> Compiling bridge (arm64 device + arm64 simulator)"
+# use_llvm=yes selects clang/clang++; the SConstruct emits -fmodules/-fcxx-modules
+# and our patch adds -F <UnityAds.xcframework dir>, all of which require Clang's
+# module system. GCC's -fmodules is a different implementation that doesn't read
+# Clang's module.modulemap, and GCC doesn't recognize -F, so under GCC the
+# `#import <UnityAds/UnityAds.h>` lookup fails with "file not found".
 # version=4.0 is the generic Godot 4.x flag set used by the harness for all 4.x.
-scons target=release_debug arch=arm64 plugin=$PLUGIN_NAME version=4.0
-scons target=release_debug arch=arm64 simulator=yes plugin=$PLUGIN_NAME version=4.0
+scons use_llvm=yes target=release_debug arch=arm64 plugin=$PLUGIN_NAME version=4.0
+scons use_llvm=yes target=release_debug arch=arm64 simulator=yes plugin=$PLUGIN_NAME version=4.0
 
 DEVICE_LIB="./bin/lib$PLUGIN_NAME.arm64-ios.release_debug.a"
 SIM_LIB="./bin/lib$PLUGIN_NAME.arm64-simulator.release_debug.a"
