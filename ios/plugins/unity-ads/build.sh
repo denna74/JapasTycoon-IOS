@@ -90,9 +90,14 @@ text = text.replace(marker, "['', 'apn', 'arkit', 'camera', 'icloud', 'gamecente
 # via the framework search path. Add -F pointing at the framework's parent so
 # `#import <UnityAds/UnityAds.h>` and `UnityAds-Swift.h` resolve as modules.
 framework_parent = script_dir + "/vendor/UnityAds.xcframework/ios-arm64"
-fw_marker = "env.Append(CCFLAGS=['-DVULKAN_ENABLED', '-std=gnu++17'])"
-assert fw_marker in text, "CCFLAGS marker not found"
-text = text.replace(fw_marker, fw_marker + "\nenv.Append(CCFLAGS=['-F', '%s'])" % framework_parent)
+fw_marker = "env.Prepend(CXXFLAGS=['-DVULKAN_ENABLED', '-std=gnu++17'])"
+assert fw_marker in text, "CXXFLAGS marker not found"
+text = text.replace(
+    fw_marker,
+    fw_marker
+    + "\nenv.Append(CCFLAGS=['-F', '%s'])" % framework_parent
+    + "\nenv.Append(LINKFLAGS=['-F', '%s', '-framework', 'UnityAds'])" % framework_parent
+)
 with open("SConstruct", "w") as f:
     f.write(text)
 PYEOF
