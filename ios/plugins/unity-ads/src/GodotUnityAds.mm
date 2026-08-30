@@ -51,6 +51,10 @@ GodotUnityAdsBridge *GodotUnityAdsBridge::instance = NULL;
     // No-op: ad presentation started.
 }
 
+- (void)unityAdsShowClick:(NSString *)placementId {
+    // No-op: click reporting is not used by the rewarded flow.
+}
+
 - (void)unityAdsShowComplete:(NSString *)placementId withFinishState:(UnityAdsShowCompletionState)state {
     NSString *stateString;
     switch (state) {
