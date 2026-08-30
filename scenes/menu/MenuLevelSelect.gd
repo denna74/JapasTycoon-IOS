@@ -198,7 +198,15 @@ func _on_play_pressed():
 	_transition_to_level_track()
 
 func _on_exit_pressed():
-	get_tree().quit()
+	_request_app_exit()
+
+func _request_app_exit() -> void:
+	var tree := get_tree()
+	if tree == null:
+		return
+	if tree.root != null:
+		tree.root.propagate_notification(SceneTree.NOTIFICATION_WM_CLOSE_REQUEST)
+	tree.quit()
 
 func _on_main_menu_back():
 	_transition_to_main_menu()
