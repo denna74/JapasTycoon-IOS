@@ -63,5 +63,5 @@ textures/vram_compression/import_etc2_astc=true
 
 auto_initialize=true
 test_mode=true
-ios/game_id="0000000"
+ios/game_id="800364529"
 ios/placements/rewarded="Rewarded_iOS"
