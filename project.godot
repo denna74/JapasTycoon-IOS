@@ -33,6 +33,7 @@ UnityAds="*res://autoload/UnityAds.gd"
 AdsManager="*res://autoload/AdsManager.gd"
 IAPConfig="*res://autoload/IAPConfig.gd"
 IAPManager="*res://autoload/IAPManager.gd"
+GodotIapPlugin="*uid://bfjo323qxscvt"
 
 [display]
 
