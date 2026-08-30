@@ -25,7 +25,7 @@ GodotUnityAdsBridge *GodotUnityAdsBridge::instance = NULL;
     });
 }
 
-- (void)unityAdsInitializationFailed:(UnityAdsInitializationError)error withMessage:(NSString *)message {
+- (void)initializationFailed:(UnityAdsInitializationError)error withMessage:(NSString *)message {
     NSString *err = [NSString stringWithFormat:@"%ld", (long)error];
     dispatch_async(dispatch_get_main_queue(), ^{
         GodotUnityAdsBridge::get_singleton()->emit_init_failed([err UTF8String], [message UTF8String]);
