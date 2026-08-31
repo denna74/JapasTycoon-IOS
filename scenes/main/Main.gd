@@ -365,9 +365,17 @@ func _on_result_exit():
 
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
-		if is_playing:
+		if is_playing and not SaveManager.is_pending_quit_penalty():
 			SaveManager.lose_mood()
 		_request_app_exit()
+	if what == NOTIFICATION_APPLICATION_PAUSED:
+		if is_playing:
+			SaveManager.set_pending_quit_penalty(true)
+			SaveManager.save_game()
+	if what == NOTIFICATION_APPLICATION_RESUMED:
+		if SaveManager.is_pending_quit_penalty():
+			SaveManager.set_pending_quit_penalty(false)
+			SaveManager.save_game()
 	if what == NOTIFICATION_WM_GO_BACK_REQUEST:
 		if is_playing and not pause_popup.visible and not cancel_skill_btn.visible:
 			_on_pause_toggled(true)

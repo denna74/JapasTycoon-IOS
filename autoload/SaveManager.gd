@@ -18,6 +18,7 @@ var max_level: int = 1
 var mood_level: int = 3
 var last_failure_time: int = 0
 var accumulated_gameplay_sec: float = 0.0
+var pending_quit_penalty: bool = false
 var skills: Dictionary = {}
 var ratings: Dictionary = {}
 var processed_purchases: Dictionary = {}
@@ -28,6 +29,7 @@ signal skill_stock_changed(skill: String, new_stock: int)
 
 func _ready():
 	load_game()
+	apply_pending_quit_penalty_if_any()
 
 func reset_to_defaults():
 	coins = 50000
@@ -78,6 +80,18 @@ func lose_mood():
 	accumulated_gameplay_sec = 0.0
 	mood_changed.emit(mood_level)
 	save_game()
+
+func set_pending_quit_penalty(value: bool):
+	pending_quit_penalty = value
+
+func is_pending_quit_penalty() -> bool:
+	return pending_quit_penalty
+
+func apply_pending_quit_penalty_if_any():
+	if not pending_quit_penalty:
+		return
+	pending_quit_penalty = false
+	lose_mood()
 
 func show_empty_mood_popup(parent: Control) -> ColorRect:
 	var overlay = ColorRect.new()
@@ -228,6 +242,7 @@ func save_game():
 		"mood_level": mood_level,
 		"last_failure_time": last_failure_time,
 		"accumulated_gameplay_sec": accumulated_gameplay_sec,
+		"pending_quit_penalty": pending_quit_penalty,
 		"skills": skills,
 		"ratings": ratings,
 		"processed_purchases": processed_purchases
@@ -314,6 +329,7 @@ func load_game() -> bool:
 	mood_level = parsed.get("mood_level", 3)
 	last_failure_time = parsed.get("last_failure_time", 0)
 	accumulated_gameplay_sec = parsed.get("accumulated_gameplay_sec", 0.0)
+	pending_quit_penalty = parsed.get("pending_quit_penalty", false)
 	apply_mood_recovery()
 	var loaded_skills = parsed.get("skills", {})
 	skills = DEFAULT_SKILLS.duplicate()

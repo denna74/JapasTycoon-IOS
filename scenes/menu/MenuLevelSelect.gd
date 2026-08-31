@@ -5,7 +5,6 @@ extends Control
 @onready var logo := $MainMenuView/Logo
 @onready var settings_btn := $MainMenuView/SettingsButton
 @onready var play_btn := $MainMenuView/PlayButton
-@onready var exit_btn := $MainMenuView/ExitButton
 @onready var explanation_label := $MainMenuView/ExplanationLabel
 @onready var user_info_bar := $LevelTrackView/UserInfoBar
 @onready var level_scroll := $LevelTrackView/LevelScroll
@@ -23,8 +22,8 @@ var _instant_moods_btn: TextureButton
 
 var _play_en: Texture2D = preload("res://assets/icons_buttons/play_en.png")
 var _play_id: Texture2D = preload("res://assets/icons_buttons/play_id.png")
-var _exit_en: Texture2D = preload("res://assets/icons_buttons/exit_en.png")
-var _exit_id: Texture2D = preload("res://assets/icons_buttons/exit_id.png")
+var _settings_en: Texture2D = preload("res://assets/icons_buttons/settings_en.png")
+var _settings_id: Texture2D = preload("res://assets/icons_buttons/settings_id.png")
 var _main_menu_en: Texture2D = preload("res://assets/icons_buttons/main_menu_en.png")
 var _main_menu_id: Texture2D = preload("res://assets/icons_buttons/main_manu_id.png")
 var _skills_bg_en: Texture2D = preload("res://assets/skills/skills_shop_en.png")
@@ -50,23 +49,10 @@ func _ready():
 	IAPManager.purchases_restored.connect(_on_purchases_restored)
 	_on_purchases_restored()
 
-	var sb = StyleBoxFlat.new()
-	sb.bg_color = Color(0.3, 0.3, 0.35)
-	sb.corner_radius_top_left = 6
-	sb.corner_radius_top_right = 6
-	sb.corner_radius_bottom_left = 6
-	sb.corner_radius_bottom_right = 6
-	settings_btn.add_theme_stylebox_override("normal", sb)
-	settings_btn.add_theme_stylebox_override("hover", sb)
-	settings_btn.add_theme_stylebox_override("pressed", sb)
-	settings_btn.add_theme_color_override("font_color", Color.WHITE)
-	settings_btn.add_theme_font_size_override("font_size", 14)
-
 	play_btn.pivot_offset = play_btn.size / 2
 	_breathe_play_btn()
 
 	play_btn.pressed.connect(_on_play_pressed)
-	exit_btn.pressed.connect(_on_exit_pressed)
 	main_menu_btn.pressed.connect(_on_main_menu_back)
 	settings_btn.pressed.connect(_on_settings_pressed)
 	MusicManager.bgm_changed.connect(func(): MusicManager.apply_to_player($BGMPlayer))
@@ -113,7 +99,7 @@ func _play_splash_animation():
 	logo.offset_top = 287
 	logo.offset_bottom = 567
 
-	var ui_elements = [play_btn, exit_btn, explanation_label, settings_btn]
+	var ui_elements = [play_btn, explanation_label, settings_btn]
 	for el in ui_elements:
 		el.modulate = Color(1, 1, 1, 0)
 
@@ -197,17 +183,6 @@ func _transition_to_main_menu():
 func _on_play_pressed():
 	_transition_to_level_track()
 
-func _on_exit_pressed():
-	_request_app_exit()
-
-func _request_app_exit() -> void:
-	var tree := get_tree()
-	if tree == null:
-		return
-	if tree.root != null:
-		tree.root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
-	tree.quit()
-
 func _on_main_menu_back():
 	_transition_to_main_menu()
 
@@ -223,17 +198,16 @@ func _close_settings_popup():
 
 func _update_ui_texts(_lang: String = ""):
 	var t := TranslationManager
-	settings_btn.text = t.t("settings")
 	if t.current_language == "en":
 		logo.texture = preload("res://assets/logo_en.png")
 		play_btn.texture_normal = _play_en
-		exit_btn.texture_normal = _exit_en
+		settings_btn.texture_normal = _settings_en
 		main_menu_btn.texture_normal = _main_menu_en
 		_skills_bg.texture = _skills_bg_en
 	else:
 		logo.texture = preload("res://assets/logo_id.png")
 		play_btn.texture_normal = _play_id
-		exit_btn.texture_normal = _exit_id
+		settings_btn.texture_normal = _settings_id
 		main_menu_btn.texture_normal = _main_menu_id
 		_skills_bg.texture = _skills_bg_id
 	explanation_label.text = t.t("explanation")

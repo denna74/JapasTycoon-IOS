@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://7a6g8hg126nq" path="res://scenes/menu/MenuLevelSelect.gd" id="1_abcde"]
 [ext_resource type="AudioStream" uid="uid://c548rngbh1ao0" path="res://assets/bgm/snack_market.mp3" id="2_bgm"]
 [ext_resource type="Texture2D" uid="uid://dkjpv1bgna2ye" path="res://assets/main_background.png" id="3_bg"]
-[ext_resource type="Texture2D" uid="uid://cg47rmia4m7vp" path="res://assets/icons_buttons/setting_small.png" id="10_gear"]
 
 [node name="MenuLevelSelect" type="Control" unique_id=1069183875]
 layout_mode = 3
@@ -31,14 +30,14 @@ anchors_preset = 0
 offset_right = 480.0
 offset_bottom = 854.0
 
-[node name="SettingsButton" type="Button" parent="MainMenuView" unique_id=1581867326]
+[node name="SettingsButton" type="TextureButton" parent="MainMenuView" unique_id=1581867326]
 layout_mode = 0
-offset_left = 336.0
-offset_top = 12.0
-offset_right = 470.0
-offset_bottom = 44.0
-icon = ExtResource("10_gear")
-expand_icon = true
+offset_left = 165.0
+offset_top = 510.0
+offset_right = 315.0
+offset_bottom = 595.0
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="Logo" type="TextureRect" parent="MainMenuView" unique_id=1909702749]
 custom_minimum_size = Vector2(280, 280)
@@ -56,15 +55,6 @@ offset_left = 165.0
 offset_top = 400.0
 offset_right = 315.0
 offset_bottom = 485.0
-ignore_texture_size = true
-stretch_mode = 5
-
-[node name="ExitButton" type="TextureButton" parent="MainMenuView" unique_id=404514611]
-layout_mode = 0
-offset_left = 165.0
-offset_top = 510.0
-offset_right = 315.0
-offset_bottom = 595.0
 ignore_texture_size = true
 stretch_mode = 5
 
