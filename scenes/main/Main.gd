@@ -347,14 +347,6 @@ func _on_exit_pressed():
 		SaveManager.lose_mood()
 	SceneManager.go_to_level_track()
 
-func _request_app_exit() -> void:
-	var tree := get_tree()
-	if tree == null:
-		return
-	if tree.root != null:
-		tree.root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
-	tree.quit()
-
 func _on_next_level():
 	start_level(current_level_data.level_number + 1)
 
@@ -368,7 +360,6 @@ func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		if is_playing and not SaveManager.is_pending_quit_penalty():
 			SaveManager.lose_mood()
-		_request_app_exit()
 	if what == NOTIFICATION_APPLICATION_PAUSED:
 		if is_playing:
 			SaveManager.set_pending_quit_penalty(true)
