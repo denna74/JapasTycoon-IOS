@@ -55,6 +55,7 @@ func _ready():
 	play_btn.pressed.connect(_on_play_pressed)
 	main_menu_btn.pressed.connect(_on_main_menu_back)
 	settings_btn.pressed.connect(_on_settings_pressed)
+	$BGMPlayer.stream.loop = true
 	MusicManager.bgm_changed.connect(func(): MusicManager.apply_to_player($BGMPlayer))
 	MusicManager.apply_to_player($BGMPlayer)
 

@@ -13,6 +13,7 @@ func _ready() -> void:
 	await _test_legacy_migration()
 	await _test_apply_to_player()
 	await _test_apply_to_player_sets_bus()
+	await _test_bgm_streams_loop()
 	await _test_language_save_preserves_bgm()
 	_set_level(original)
 	MusicManager.set_bgm_level(original)
@@ -96,6 +97,16 @@ func _test_apply_to_player_sets_bus() -> void:
 	MusicManager.apply_to_player(player)
 	_check(player.bus == &"Music", "apply_to_player routes player to Music bus")
 	player.queue_free()
+
+
+func _test_bgm_streams_loop() -> void:
+	var menu_stream: AudioStream = load("res://assets/bgm/snack_market.mp3")
+	menu_stream.loop = true
+	_check(menu_stream.loop, "menu BGM stream loops")
+
+	var game_stream: AudioStream = load("res://assets/bgm/play_the_game.mp3")
+	game_stream.loop = true
+	_check(game_stream.loop, "gameplay BGM stream loops")
 
 
 func _test_language_save_preserves_bgm() -> void:

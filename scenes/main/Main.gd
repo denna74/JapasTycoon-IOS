@@ -30,6 +30,7 @@ func _ready():
 	level_complete_sound.bus = &"SFX"
 	add_child(level_complete_sound)
 
+	$BGMPlayer.stream.loop = true
 	MusicManager.bgm_changed.connect(func(): MusicManager.apply_to_player($BGMPlayer))
 	MusicManager.apply_to_player($BGMPlayer)
 
