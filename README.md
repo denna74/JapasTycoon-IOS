@@ -1,6 +1,6 @@
 # JapasTycoon iOS
 
-iOS port of Japas Tycoon (match-3 puzzle game about traditional Indonesian snacks), built with Godot 4.6.
+iOS port of Japas Tycoon (match-3 puzzle game about traditional Indonesian snacks), built with Godot 4.7.
 
 ## Prerequisites
 
@@ -88,7 +88,7 @@ Run the **Initialize Certificates** workflow again (or re-download + re-import t
 
 ### Godot export fails
 
-Ensure you have the latest Godot 4.6 stable release and iOS export templates installed.
+Ensure you have the latest Godot 4.7 stable release and iOS export templates installed.
 
 ### TestFlight build not appearing
 

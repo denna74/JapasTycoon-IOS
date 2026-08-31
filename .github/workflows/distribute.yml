@@ -30,23 +30,23 @@ jobs:
           path: |
             /Applications/Godot.app/
             ~/Library/Application Support/Godot/
-          key: ${{ runner.os }}-godot-v4.6
+          key: ${{ runner.os }}-godot-v4.7
 
       - name: Setup Godot Engine
         run: |
           if [ ! -x /usr/local/bin/godot ]; then
             if [ ! -d /Applications/Godot.app ]; then
-              curl -LO https://github.com/godotengine/godot/releases/download/4.6-stable/Godot_v4.6-stable_macos.universal.zip
-              unzip Godot_v4.6-stable_macos.universal.zip
+              curl -LO https://github.com/godotengine/godot/releases/download/4.7-stable/Godot_v4.7-stable_macos.universal.zip
+              unzip Godot_v4.7-stable_macos.universal.zip
               mv Godot.app /Applications/
             fi
             ln -s /Applications/Godot.app/Contents/MacOS/Godot /usr/local/bin/godot
-            mkdir -p ~/Library/Application\ Support/Godot/export_templates/4.6.stable
-            if [ -z "$(ls -A ~/Library/Application\ Support/Godot/export_templates/4.6.stable)" ]; then
-              curl -LO https://github.com/godotengine/godot/releases/download/4.6-stable/Godot_v4.6-stable_export_templates.tpz
-              unzip Godot_v4.6-stable_export_templates.tpz -d /tmp/templates
-              mv /tmp/templates/templates/* ~/Library/Application\ Support/Godot/export_templates/4.6.stable/
-              rm -rf /tmp/templates Godot_v4.6-stable_export_templates.tpz
+            mkdir -p ~/Library/Application\ Support/Godot/export_templates/4.7.stable
+            if [ -z "$(ls -A ~/Library/Application\ Support/Godot/export_templates/4.7.stable)" ]; then
+              curl -LO https://github.com/godotengine/godot/releases/download/4.7-stable/Godot_v4.7-stable_export_templates.tpz
+              unzip Godot_v4.7-stable_export_templates.tpz -d /tmp/templates
+              mv /tmp/templates/templates/* ~/Library/Application\ Support/Godot/export_templates/4.7.stable/
+              rm -rf /tmp/templates Godot_v4.7-stable_export_templates.tpz
             fi
           fi
 

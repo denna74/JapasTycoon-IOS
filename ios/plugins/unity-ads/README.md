@@ -1,4 +1,4 @@
-# Unity Ads iOS plugin (Godot 4.6)
+# Unity Ads iOS plugin (Godot 4.7)
 
 Bridges the Unity Ads iOS SDK to Godot as the native `GodotUnityAds` singleton,
 mirroring the Android `addons/unityads/` plugin interface so one GDScript

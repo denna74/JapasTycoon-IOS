@@ -18,7 +18,8 @@
 
 ## iOS-Specific Notes
 
-- This project targets iOS using Godot 4.6 with the Mobile renderer.
+- This project targets iOS using Godot 4.7 with the Mobile renderer.
+- **Godot 4.7 is required for the force-quit mood penalty.** Godot 4.6.x iOS never delivers `NOTIFICATION_APPLICATION_PAUSED`/`RESUMED`/`FOCUS_IN`/`FOCUS_OUT` (upstream bug #115936, SwiftUI lifecycle migration; fixed in 4.7 via PR #116395, no 4.6 backport). `Main.gd` `_notification()` sets/clears the `pending_quit_penalty` flag on PAUSED/RESUMED — on 4.6 those never fired on iOS, so the penalty never applied. Do NOT downgrade below 4.7 or this regresses.
 - IAP uses OpenIAP (StoreKit 2) — the `IAPManager` autoload drives the native `GodotIap` class via `ClassDB`.
 - Ads use Unity Ads — the `AdsManager` autoload drives the GDScript `UnityAds` autoload, which wraps the native `GodotUnityAds` iOS plugin singleton (`Engine.get_singleton("GodotUnityAds")`). The iOS plugin lives in `ios/plugins/unity-ads/` (an Objective-C++ bridge built by `build.sh`, run on CI only since it needs macOS/Xcode). The Android original used the `addons/unityads/` plugin (Android-only, not present here).
 - Product IDs use reverse-domain notation: `com.japastycoon.instant_coins_1/2/3`.

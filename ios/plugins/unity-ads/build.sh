@@ -9,11 +9,11 @@
 # This script must run on macOS with Xcode and Python/SCons (the macos-latest
 # GitHub Action runner satisfies all of these). It follows the canonical
 # godot-ios-plugins build path: generate the Godot engine headers from the
-# 4.6 source, then compile the plugin's Objective-C++ against them.
+# 4.7 source, then compile the plugin's Objective-C++ against them.
 #
 set -euo pipefail
 
-GODOT_TAG="4.6-stable"
+GODOT_TAG="4.7-stable"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "$SCRIPT_DIR/../../.." && pwd)"
 export PATH="$PATH:/opt/homebrew/bin"
@@ -49,7 +49,7 @@ fi
 # ---------------------------------------------------------------------------
 # 2. Build the Godot bridge library
 # ---------------------------------------------------------------------------
-# The bridge compiles against the Godot 4.6 engine headers. We use the official
+# The bridge compiles against the Godot 4.7 engine headers. We use the official
 # godot-ios-plugins harness (its SConstruct globs plugins/<name>/*.{cpp,mm,m}
 # and builds against the `godot` submodule). The `godot` submodule must build
 # its generated headers first, so this step compiles the engine's iOS target.
@@ -61,14 +61,14 @@ echo "==> Cloning godot-ios-plugins (build harness) — this pulls Godot source"
 git clone --recursive --depth 1 https://github.com/godotengine/godot-ios-plugins.git "$WORK/godot-ios-plugins"
 cd "$WORK/godot-ios-plugins"
 
-# Pin the Godot submodule to the 4.6 tag.
+# Pin the Godot submodule to the 4.7 tag.
 cd godot
 git fetch --depth 1 origin tag "$GODOT_TAG"
 git checkout "$GODOT_TAG"
 cd ..
 
 # Generate the Godot iOS headers (required to compile any iOS plugin).
-echo "==> Building Godot 4.6 iOS headers (takes several minutes)"
+echo "==> Building Godot 4.7 iOS headers (takes several minutes)"
 cd godot
 scons platform=ios target=editor -j2
 cd ..
