@@ -45,6 +45,24 @@ platform :ios do
     )
   end
 
+  desc "List in-app purchase products and their App Store Connect state (no upload)"
+  lane :iap_products do
+    api_key = app_store_connect_api_key(
+      key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
+      issuer_id: ENV["APP_STORE_CONNECT_API_ISSUER_ID"],
+      key_content: ENV["APP_STORE_CONNECT_API_KEY_KEY"],
+      is_key_content_base64: true
+    )
+    app = Spaceship::ConnectAPI::App.find("com.japastycoon")
+    resp = Spaceship::ConnectAPI.client.get("apps/#{app.id}/inAppPurchasesV2")
+    products = resp["data"]
+    UI.message("IAP count: #{products.size}")
+    products.each do |p|
+      attrs = p["attributes"]
+      UI.message("#{attrs['productId']}  state=#{attrs['state']}  name=#{attrs['name']}")
+    end
+  end
+
   desc "Automated pipeline to fetch certificates, build the Xcode project, and publish to TestFlight"
   lane :deploy_testflight do
     api_key = app_store_connect_api_key(

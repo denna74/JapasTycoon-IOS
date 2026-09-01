@@ -33,6 +33,7 @@
 
 ## Build & Deploy
 
-- GitHub Actions CI/CD pipeline runs on `macos-latest` runners (free for public repos).
+- **There is NO local Mac/Xcode.** ALL building, signing, uploading, and iOS diagnostics happen exclusively via GitHub Actions + fastlane (`macos-latest` runners, free for public repos). Never plan around running Xcode, altool, or gym locally.
 - Fastlane handles code-signing (cert+sigh) and TestFlight upload.
+- **TestFlight uploads are scarce:** App Store Connect enforces a per-app daily upload quota (ITMS-90382 "Upload limit reached"). Spend builds wisely — batch diagnostics into as few TestFlight uploads as possible. Prefer zero-upload evidence first (e.g. the `iap_products` fastlane lane via the `iap-check.yml` workflow, which only reads the ASC API).
 - See `README.md` for full setup instructions.
