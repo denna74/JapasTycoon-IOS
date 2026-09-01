@@ -86,6 +86,24 @@ jobs:
           UNITY_ADS_SDK_URL: ${{ secrets.UNITY_ADS_SDK_URL }}
           UNITY_ADS_VERSION: ${{ secrets.UNITY_ADS_VERSION }}
 
+      - name: Verify Godot IAP Plugin (drift guard)
+        run: |
+          IAP_PLUGIN_VERSION=$(grep -E '^version=' addons/godot-iap/plugin.cfg | cut -d'"' -f2)
+          echo "godot-iap plugin version: $IAP_PLUGIN_VERSION"
+          if [ "$IAP_PLUGIN_VERSION" != "3.4.1" ]; then
+            echo "::error::Unexpected godot-iap version '$IAP_PLUGIN_VERSION' (expected 3.4.1)"
+            exit 1
+          fi
+          for FW in GodotIap SwiftGodotRuntime; do
+            MIN_OS=$(/usr/libexec/PlistBuddy -c "Print :MinimumOSVersion" \
+              "addons/godot-iap/bin/ios/${FW}.framework/Info.plist")
+            echo "${FW}.framework MinimumOSVersion: $MIN_OS"
+            if [ "$MIN_OS" != "17.0" ]; then
+              echo "::error::${FW}.framework requires iOS '$MIN_OS' (expected 17.0)"
+              exit 1
+            fi
+          done
+
       - name: Export Xcode Project
         run: |
           mkdir -p build/ios

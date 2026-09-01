@@ -1,10 +1,14 @@
 extends Node
 
-# Cross-platform IAP manager using OpenIAP (StoreKit 2 on iOS).
+# IAP manager using OpenIAP (StoreKit 2 on iOS).
 # Registered as the `IAPManager` autoload in project.godot.
 #
-# All OpenIAP types are accessed via ClassDB so the script parses correctly on
-# desktop editors where the iOS plugin is absent.
+# Drives the `GodotIapPlugin` autoload (the GodotIapWrapper GDScript from
+# addons/godot-iap), never the native `GodotIap` class directly — the native
+# class only exposes camelCase native methods, while the friendly snake_case
+# API lives on the wrapper.
+
+const Types = preload("res://addons/godot-iap/types.gd")
 
 signal purchase_successful(sku: String, token: String)
 signal purchase_failed(sku: String)
@@ -17,25 +21,30 @@ var _initialized: bool = false
 var _products_ready: bool = false
 var _pending_restorations: Array[Dictionary] = []
 var _purchases_by_token: Dictionary = {}
+var last_products_status: String = ""
+var _last_products_raw: Dictionary = {}
+var _last_products_native_count: int = 0
+var _last_products_error: String = ""
 
 func _ready():
-	if ClassDB.class_exists("GodotIap") or Engine.has_singleton("GodotIap"):
-		var iap = _get_iap()
-		if iap:
-			iap.connected.connect(_on_connected)
-			iap.disconnected.connect(_on_disconnected)
-			iap.purchase_updated.connect(_on_purchase_updated)
-			iap.purchase_error.connect(_on_purchase_error)
-			iap.init_connection()
-	else:
+	await get_tree().process_frame
+	var iap = _get_iap()
+	if not iap:
 		print("OpenIAP plugin not found")
+		return
+	iap.connected.connect(_on_connected)
+	iap.disconnected.connect(_on_disconnected)
+	iap.purchase_updated.connect(_on_purchase_updated)
+	iap.purchase_error.connect(_on_purchase_error)
+	iap.products_fetched.connect(_on_products_fetched_raw)
+	var connected = await iap.init_connection()
+	if connected and not _initialized:
+		_on_connected()
+	elif not connected:
+		print("OpenIAP connection failed")
 
 func _get_iap():
-	if ClassDB.class_exists("GodotIap") and ClassDB.can_instantiate("GodotIap"):
-		return ClassDB.instantiate("GodotIap")
-	if Engine.has_singleton("GodotIap"):
-		return Engine.get_singleton("GodotIap")
-	return null
+	return get_node_or_null("/root/GodotIapPlugin")
 
 func is_available() -> bool:
 	return _get_iap() != null
@@ -52,6 +61,8 @@ func get_pending_restorations() -> Array[Dictionary]:
 	return result
 
 func _on_connected():
+	if _initialized:
+		return
 	_initialized = true
 	print("OpenIAP connected")
 	_fetch_products()
@@ -61,6 +72,15 @@ func _on_disconnected():
 	_products_ready = false
 	print("OpenIAP disconnected")
 
+func _on_products_fetched_raw(result: Dictionary) -> void:
+	if not result.has("productsJson") and not result.has("products"):
+		return
+	_last_products_raw = result
+	var products_json = String(result.get("productsJson", "[]"))
+	var parsed = JSON.parse_string(products_json)
+	_last_products_native_count = (parsed.size() if parsed is Array else 0)
+	_last_products_error = String(result.get("error", ""))
+
 func _fetch_products():
 	var iap = _get_iap()
 	if not iap:
@@ -69,14 +89,21 @@ func _fetch_products():
 		"skus": _get_all_skus(),
 		"type": "in-app"
 	}
+	print("Fetching IAP products: ", request["skus"])
+	last_products_status = "Fetching: %s" % ", ".join(request["skus"])
 	var products = await iap.fetch_products(request)
 	if products.size() > 0:
 		_products_ready = true
 		print("Product details loaded: ", products.size(), " products")
+		last_products_status = "Products: %s" % ", ".join(request["skus"])
 		billing_ready.emit()
 		_check_pending_restorations()
 	else:
 		print("Failed to load product details")
+		if _last_products_native_count == 0 and _last_products_error.is_empty():
+			last_products_status = "StoreKit returned no matching products"
+		elif not _last_products_error.is_empty():
+			last_products_status = "StoreKit error: %s" % _last_products_error
 
 func _get_all_skus() -> Array:
 	var skus := []
@@ -88,40 +115,74 @@ func _check_pending_restorations():
 	var iap = _get_iap()
 	if not iap:
 		return
-	var result = await iap.restore_purchases()
-	if result and result.get("success", false):
-		var purchases = result.get("purchases", [])
-		if purchases.is_empty():
-			print("No pending purchases to restore")
-			return
-		print("Found ", purchases.size(), " purchase(s) to reconcile")
-		for purchase in purchases:
-			var product_id = purchase.get("productId", "")
-			if product_id.is_empty():
-				continue
-			var state = purchase.get("state", -1)
-			if state != 0:
-				continue
-			var token = purchase.get("transactionId", "")
-			if token.is_empty():
-				continue
-			_purchases_by_token[token] = purchase
-			if SaveManager.is_purchase_processed(token):
-				print("Purchase already delivered, cleaning up: ", product_id, " token=", token)
-				finalize_purchase(token, product_id)
-			else:
-				print("Pending delivery for: ", product_id, " token=", token)
-				_pending_restorations.append({"sku": product_id, "token": token})
-		if not _pending_restorations.is_empty():
-			purchases_restored.emit()
+	var restore_result = await iap.restore_purchases()
+	if not restore_result.success:
+		print("Failed to restore purchases")
+		return
+	var result = await iap.get_available_purchases_result()
+	if not result.get("success", false):
+		return
+	var purchases = result.get("purchases", [])
+	if purchases.is_empty():
+		print("No pending purchases to restore")
+		return
+	print("Found ", purchases.size(), " purchase(s) to reconcile")
+	for purchase in purchases:
+		var purchase_dict = _to_canonical_purchase_dict(purchase)
+		if purchase_dict.is_empty():
+			continue
+		var product_id = purchase_dict.get("productId", "")
+		if product_id.is_empty():
+			continue
+		if not _is_purchased(purchase_dict.get("purchaseState", "")):
+			continue
+		var token = purchase_dict.get("transactionId", "")
+		if token.is_empty():
+			continue
+		if SaveManager.is_purchase_processed(token):
+			print("Purchase already delivered, cleaning up: ", product_id, " token=", token)
+			_acknowledge_purchase(purchase_dict, product_id)
+		else:
+			_purchases_by_token[token] = purchase_dict
+			print("Pending delivery for: ", product_id, " token=", token)
+			_pending_restorations.append({"sku": product_id, "token": token})
+	if not _pending_restorations.is_empty():
+		purchases_restored.emit()
+
+func _to_canonical_purchase_dict(purchase) -> Dictionary:
+	var purchase_dict: Dictionary
+	if purchase is Dictionary:
+		purchase_dict = purchase
+	elif purchase is Object and purchase.has_method("to_dict"):
+		purchase_dict = purchase.to_dict()
+	else:
+		return {}
+	if String(purchase_dict.get("productId", "")) != "":
+		return purchase_dict
+	var mapped := purchase_dict.duplicate(true)
+	if not mapped.has("productId") and mapped.has("product_id"):
+		mapped["productId"] = mapped["product_id"]
+	if not mapped.has("transactionId") and mapped.has("transaction_id"):
+		mapped["transactionId"] = mapped["transaction_id"]
+	if not mapped.has("purchaseState") and mapped.has("purchase_state"):
+		mapped["purchaseState"] = mapped["purchase_state"]
+	mapped.erase("product_id")
+	mapped.erase("transaction_id")
+	mapped.erase("purchase_state")
+	if String(mapped.get("productId", "")) != "":
+		return mapped
+	return {}
+
+func _is_purchased(state) -> bool:
+	if state is int:
+		return state == Types.PurchaseState.PURCHASED
+	return String(state).strip_edges().to_lower() == "purchased"
 
 func purchase(sku: String) -> int:
 	var iap = _get_iap()
-	if iap == null:
+	if not iap:
 		return PurchaseResult.UNAVAILABLE
 	if not _initialized:
-		return PurchaseResult.NOT_INITIALIZED
-	if not _products_ready:
 		return PurchaseResult.NOT_INITIALIZED
 	if sku.is_empty():
 		return PurchaseResult.NO_SKU
@@ -138,15 +199,18 @@ func finalize_purchase(token: String, sku: String):
 	if token.is_empty() or sku.is_empty():
 		return
 	var purchase = _purchases_by_token.get(token, {})
-	_purchases_by_token.erase(token)
 	if purchase.is_empty():
 		print("finalize_purchase: no stored purchase for token=", token, " sku=", sku)
 		return
+	_acknowledge_purchase(purchase, sku)
+	_purchases_by_token.erase(token)
+
+func _acknowledge_purchase(purchase: Dictionary, sku: String):
 	var iap = _get_iap()
 	if not iap:
 		return
 	var is_consumable: bool = IAPConfig.get_type(sku) == IAPConfig.SkuType.CONSUMABLE
-	iap.finish_transaction(purchase, is_consumable)
+	iap.finish_transaction_dict(purchase, is_consumable)
 
 func _on_purchase_updated(purchase: Dictionary):
 	var product_id = purchase.get("productId", "")
