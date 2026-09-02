@@ -555,11 +555,7 @@ func _show_instant_popup(key: String):
 		iap_status.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		iap_status.add_theme_color_override("font_color", Color(1, 0.85, 0, 1))
 		iap_status.add_theme_font_size_override("font_size", 11)
-		iap_status.text = "init=%s ready=%s | %s" % [
-			IAPManager.is_initialized(),
-			IAPManager.is_products_ready(),
-			IAPManager.last_products_status,
-		]
+		iap_status.text = "" if IAPManager.is_products_ready() else TranslationManager.t("iap_not_ready")
 		popup.add_child(iap_status)
 		_build_instant_coins_options(popup, overlay, popup, iap_status)
 		var t = TranslationManager

@@ -93,7 +93,7 @@ func _fetch_products():
 	if products.size() > 0:
 		_products_ready = true
 		print("Product details loaded: ", products.size(), " products")
-		last_products_status = "Products: %s" % ", ".join(request["skus"])
+		last_products_status = "Products: %s" % ", ".join(request.skus)
 		billing_ready.emit()
 		_check_pending_restorations()
 	else:
@@ -112,10 +112,6 @@ func _get_all_skus() -> Array:
 func _check_pending_restorations():
 	var iap = _get_iap()
 	if not iap:
-		return
-	var restore_result = await iap.restore_purchases()
-	if not restore_result.success:
-		print("Failed to restore purchases")
 		return
 	var result = await iap.get_available_purchases_result()
 	if not result.get("success", false):
