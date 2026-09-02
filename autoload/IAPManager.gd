@@ -85,12 +85,10 @@ func _fetch_products():
 	var iap = _get_iap()
 	if not iap:
 		return
-	var request = {
-		"skus": _get_all_skus(),
-		"type": "in-app"
-	}
-	print("Fetching IAP products: ", request["skus"])
-	last_products_status = "Fetching: %s" % ", ".join(request["skus"])
+	var request = Types.ProductRequest.new()
+	request.skus.assign(_get_all_skus())
+	print("Fetching IAP products: ", request.skus)
+	last_products_status = "Fetching: %s" % ", ".join(request.skus)
 	var products = await iap.fetch_products(request)
 	if products.size() > 0:
 		_products_ready = true
